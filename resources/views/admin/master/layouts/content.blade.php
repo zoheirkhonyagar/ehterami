@@ -1,4 +1,5 @@
 <div class="wrapper wrapper-content">
+    @yield('content')
     <div class="row">
         <div class="col-lg-3">
             <div class="ibox float-e-margins">
