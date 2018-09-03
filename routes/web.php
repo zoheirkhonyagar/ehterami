@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.master.index');
 });
+
+//upload routes
+Route::prefix('upload')->group(function () {
+    Route::get('/uploadform' , function () {
+        return view('admin.upload.index');
+    });
+    Route::post('request', '')->name('upload-image');
+});
