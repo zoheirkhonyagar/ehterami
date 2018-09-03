@@ -10,7 +10,7 @@
             </div>
             <div class="ibox-content">
                 <form class="form-horizontal" action="{{ route('upload-image') }}" enctype="multipart/form-data" method="post">
-                    
+                    @csrf()
                     <div class="form-group"><label class="col-lg-2 control-label">ایمیل</label>
                         <div class="col-lg-10">
                             <input type="file" name="image" class="form-control"> 

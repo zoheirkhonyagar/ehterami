@@ -19,9 +19,9 @@ Route::get('/', function () {
 });
 
 //upload routes
-Route::prefix('upload')->group(function () {
+Route::prefix('upload')->namespace('Modules')->group(function () {
     Route::get('/uploadform' , function () {
         return view('admin.upload.index');
     });
-    Route::post('request', '')->name('upload-image');
+    Route::post('request', 'UploadController@upload')->name('upload-image');
 });
