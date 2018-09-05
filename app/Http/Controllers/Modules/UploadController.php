@@ -6,21 +6,33 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\UploadedFile;
+use App\Http\Requests\ImageUploadRequest;
 
 class UploadController extends Controller
 {
-    public function upload(Request $request)
+    public function uploadImage(ImageUploadRequest $request)
     {
-        if ($request->hasFile('image')) {
-            $file = [
-                'filename' => $request->image->getClientOriginalName(),
-                'extension' => $request->image->getClientOriginalExtension(),
-                'mimType' => $request->image->getClientMimeType(),
-                'size' => $request->image->getSize() / 1000000 . ' Mb',
-            ];
-            return $file;
-            return response()->json(true);
+
+
+
+        if ($request->hasFile('images')) {
+            foreach($request->images as $image){
+                $file[] = $this->getUniqName($image);
+                // $image->move('uploads' , $image->getClientOriginalName());
+            };
+            return response()->json($file);         
         }
-        return response()->json(false);
+            return response()->json(false);
+    }
+
+    public function multiUpload()
+    {
+
+    }
+
+    protected function getUniqName($file)
+    {
+        $uniqueName = uniqid('img-');
+        return $uniqueName;
     }
 }
