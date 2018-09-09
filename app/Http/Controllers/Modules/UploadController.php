@@ -10,29 +10,75 @@ use App\Http\Requests\ImageUploadRequest;
 
 class UploadController extends Controller
 {
-    public function uploadImage(ImageUploadRequest $request)
+    public function uploadImage($file)
     {
 
+        if ($file) {
+            
+            $uniqName = $this->getUniqName($file);
+            
+            try{
+            
+                $file->move('uploads' , $uniqName);
+            
+            }catch(\Exception $e){
+        
+                return $e;        
+            
+            }
+            
+            return $uniqName;
+        
+        }
+        
+            return false;
+    }
 
-
+    public function multiUpload(ImageUploadRequest $request)
+    {
         if ($request->hasFile('images')) {
-            foreach($request->images as $image){
+        
+            foreach($request->images as $image){   
+                
                 $file[] = $this->getUniqName($image);
-                // $image->move('uploads' , $image->getClientOriginalName());
+                
+                try{
+                
+                    $image->move('uploads' , end($file));
+                
+                }catch(\Exception $e){
+                
+                    return response()->json($e);        
+                
+                }
+
             };
-            return response()->json($file);         
+            
+            return response()->json($file);
+        
         }
             return response()->json(false);
     }
 
-    public function multiUpload()
-    {
-
-    }
-
     protected function getUniqName($file)
     {
-        $uniqueName = uniqid('img-');
-        return $uniqueName;
+        $originalName = $this->getRegularName($file->getClientOriginalName()); 
+        
+        $uniqName = uniqid('img-') . '-' . $originalName;
+        
+        return $uniqName;
     }
+
+    protected function getRegularName($name)
+    {
+        $characters = ['_',' '];
+        
+        $name = preg_replace(['/ +/' , '/_+/'], ' ', $name);
+        
+        $name = str_replace( $characters, '-', $name );
+        
+        return $name;
+    }
+
+    
 }

@@ -15,29 +15,29 @@
                 <h5>آپلود تصویر</h5>
             </div>
             <div class="ibox-content">
-                <form id="upload" class="form-horizontal" action="{{ route('upload-image') }}" enctype="multipart/form-data" method="post">
+                <form id="upload" class="form-horizontal" action="{{ route('multi-upload-image') }}" enctype="multipart/form-data" method="post">
                     @csrf()
                     <div class="form-group"><label class="col-lg-2 control-label">ایمیل</label>
                         <div class="col-lg-10">
                             <input type="file" id="images" name="images[]" multiple class="form-control"> 
                         </div>
                     </div>
-                    <div class="progress">
-                        <div id="progress-bar" style="width: 0%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" class="progress-bar progress-bar-success">
-                            <span id="">0%</span>
-                        </div>
-                    </div>
-                    @if(count($errors))
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
-                            <ul>
-                                @foreach($errors->all() as $error)
-                                <li style="color:red">{{ $error }}</li>
-                                @endforeach
+                            <div class="progress">
+                                <div id="progress-bar" style="width: 0%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" class="progress-bar progress-bar-success">
+                                    <span id="">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <ul id="errors">
+                                
                             </ul>
                         </div>
                     </div>
-                    @endif
 
                     <div class="form-group">
                         <div class="col-lg-offset-2 col-lg-10">
@@ -61,7 +61,6 @@
         
         let form = document.getElementById('upload');
     
-
         let progressBar = $('#progress-bar');
 
         let progressPercentage = $('#progress-bar span');
@@ -84,27 +83,46 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
-            url: '{{route("upload-image")}}',
+            url: '{{route("multi-upload-image")}}',
             data: formData,
             processData: false,
             contentType: false,
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(data) {
-                let errors = data.responseJSON;
-                console.log(errors.errors.images);
-            },
             xhr: function () {
                 var xhr = $.ajaxSettings.xhr();
-
                 xhr.upload.addEventListener('progress' , function(e){
-                    progressBar.css('width' , Math.floor(e.loaded / e.total * 100) + '%');
-                    progressPercentage.html(Math.floor(e.loaded / e.total * 100) + ' %')
+                    if (e.lengthComputable) {
+                        progressBar.css('background' , '#1c84c6');
+                        progressBar.css('width' , Math.floor(e.loaded / e.total * 100) + '%');
+                        progressPercentage.html(Math.floor(e.loaded / e.total * 100) + ' %');
+                    }
                 });
             
                 return xhr;
             },
+            success: function(response) {
+                progressBar.css('background' , '#1ab394');
+                let errorElement = $('#errors');
+                errorElement.html('');
+                errorElement.html('<li style="color:#1ab394">آپلود تصویر با موفقیت انجام شد</li>');
+                // console.log(response);
+            },
+            error: function(data) {
+                let errors = data.responseJSON;
+                if(errors){
+                    errors = Object.values(errors.errors);
+                    let errorElement = $('#errors'); 
+                    errorElement.html('');
+                    let liElement = '';
+                    for (let index = 0; index < errors.length; index++) {
+                        liElement += '<li style="color:red">'+ errors[index][0] +'</li>';
+                        // console.log(errors[index][0]);
+                    }
+                    errorElement.html(liElement);
+                    progressBar.css('background' , 'red');
+                }
+                    
+            },
+            
             
         });
     }
