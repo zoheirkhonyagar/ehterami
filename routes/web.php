@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.master.index');
+    return view('main.master.index');
 });
 
 //upload routes
@@ -25,4 +25,12 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
     });
     Route::post('request', 'UploadController@uploadImage')->name('single-upload-image');
     Route::post('request', 'UploadController@multiUpload')->name('multi-upload-image');
+});
+
+
+Route::prefix('admin')->namespace('Modules')->group(function () {
+    Route::get('/' , function () {
+        return view('admin.master.index');
+    });
+
 });
