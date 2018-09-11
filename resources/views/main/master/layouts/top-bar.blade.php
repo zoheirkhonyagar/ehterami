@@ -5,17 +5,9 @@
             <ul class="rd-navbar-items-list">
                 <li>
                     <div class="unit unit-spacing-xxs unit-horizontal">
-                        <div class="unit__left"><span class="icon icon-sm icon-primary fl-bigmug-line-trophy55"></span></div>
+                        <div class="unit__left"><span class="icon icon-sm icon-primary fl-bigmug-line-two319"></span></div>
                         <div class="unit__body">
-                            <p>توزیع کننده برتر اروپا</p>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="unit unit-spacing-xxs unit-horizontal">
-                        <div class="unit__left"><span class="icon icon-sm icon-primary fl-bigmug-line-circular220"></span></div>
-                        <div class="unit__body">
-                            <p>دارای گواهی نامه ISO 9001</p>
+                            <p>به وبسایت ما خوش آمدید</p>
                         </div>
                     </div>
                 </li>

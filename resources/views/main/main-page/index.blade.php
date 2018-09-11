@@ -1,5 +1,8 @@
-<!-- Swiper-->
-<section class="section section-layout-1">
+@extends('main.master.index')
+
+@section('content')
+
+    <section class="section section-layout-1">
         <div class="section-layout-main">
             <div class="swiper-container swiper-slider swiper-slider_style-2" data-autoplay="5000" data-simulate-touch="true" data-slide-effect="fade">
                 <div class="swiper-wrapper">
@@ -218,97 +221,6 @@
         </div>
     </section>
 
-    <!-- Stocks Rating-->
-    <section class="section section-lg bg-white">
-        <div class="shell shell-wide">
-            <div class="range range-md-center">
-                <div class="cell-lg-11">
-                    <div class="range range-sm-center range-md-left range-md-middle range-50">
-                        <div class="cell-sm-10 cell-md-5 cell-lg-5">
-                            <h2>چرا ما را انتخاب کنید</h2>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان</p><a class="button button-dark-outline" href="statistics.html">اطلاعات بیشتر</a>
-                        </div>
-                        <div class="cell-sm-10 cell-md-7 cell-xl-6">
-                            <div class="box-spacer-left box-spacer-left-lg">
-                                <div class="d3-chart" id="line-chart" style="width:100%;height: 370px; margin: 0 auto;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our Professionals-->
-    <section class="section parallax-container bg-gray-dark">
-        <div class="material-parallax"><img src="images/bg-image-3.jpg" alt=""></div>
-        <div class="parallax-content">
-            <div class="section-sm text-center">
-                <div class="shell shell-wide">
-                    <div class="range range-md-center">
-                        <div class="cell-lg-11">
-                            <!-- Section Header-->
-                            <div class="section__header section_header-noborder">
-                                <h2>تیم حرفه ای ما</h2>
-                                <div class="section__header-element"><a class="link link-arrow" href="team.html"><span>مشاهده همه افراد</span></a></div>
-                            </div>
-                            <div class="range range-30 range-flex">
-                                <div class="cell-sm-6 cell-lg-3">
-                                    <!-- Card creative-->
-                                    <article class="card-creative">
-                                        <div class="card-creative__header"><img src="images/team-1-115x119.jpg" alt="" width="115" height="119">
-                                        </div>
-                                        <div class="card-creative__main" data-fixed-height="">
-                                            <p class="card-creative__title">جان اسنو</p>
-                                            <p class="card-creative__subtitle">بنیان گذار</p>
-                                            <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="cell-sm-6 cell-lg-3">
-                                    <!-- Card creative-->
-                                    <article class="card-creative">
-                                        <div class="card-creative__header"><img src="images/team-2-115x119.jpg" alt="" width="115" height="119">
-                                        </div>
-                                        <div class="card-creative__main" data-fixed-height="">
-                                            <p class="card-creative__title">سامی بیگی</p>
-                                            <p class="card-creative__subtitle">مدیر کسب و کار</p>
-                                            <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="cell-sm-6 cell-lg-3">
-                                    <!-- Card creative-->
-                                    <article class="card-creative">
-                                        <div class="card-creative__header"><img src="images/team-3-115x119.jpg" alt="" width="115" height="119">
-                                        </div>
-                                        <div class="card-creative__main" data-fixed-height="">
-                                            <p class="card-creative__title">پیتر پارکر</p>
-                                            <p class="card-creative__subtitle">مدیر پروژه</p>
-                                            <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                        </div>
-                                    </article>
-                                </div>
-                                <div class="cell-sm-6 cell-lg-3">
-                                    <!-- Card creative-->
-                                    <article class="card-creative">
-                                        <div class="card-creative__header"><img src="images/team-4-115x119.jpg" alt="" width="115" height="119">
-                                        </div>
-                                        <div class="card-creative__main" data-fixed-height="">
-                                            <p class="card-creative__title">ماری جین</p>
-                                            <p class="card-creative__subtitle">کپی کار</p>
-                                            <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                        </div>
-                                    </article>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Clients-->
     <section class="section section-md bg-white text-center">
         <div class="shell shell-wide">
@@ -444,3 +356,7 @@
         </div>
     </section>
     
+
+
+
+@endsection

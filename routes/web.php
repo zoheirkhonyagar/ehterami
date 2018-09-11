@@ -14,8 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main.master.index');
+//index routes
+Route::group([''] , function () {
+        
+    $this->get('/', function () {
+        return view('main.main-page.index');
+    })->name('main-index');
+
+    $this->get('/about-us' , function () { return 'about-us'; })->name('about-us-index');
+
+    $this->get('/portfolio' , function () { return 'portfolio'; })->name('portfolio-index');
+    
+    $this->get('/order' , function () { return 'order'; })->name('order-index');
+
+    $this->get('/news' , function () { return 'news'; })->name('news-index');
+
+    $this->get('/contact-us' , function () { return 'contact-us'; })->name('contact-us-index');
+
 });
 
 //upload routes
@@ -27,7 +42,7 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
     Route::post('request', 'UploadController@multiUpload')->name('multi-upload-image');
 });
 
-
+//admin routes
 Route::prefix('admin')->namespace('Modules')->group(function () {
     Route::get('/' , function () {
         return view('admin.master.index');
