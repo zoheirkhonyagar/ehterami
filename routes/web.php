@@ -43,9 +43,14 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
 });
 
 //admin routes
-Route::prefix('admin')->namespace('Modules')->group(function () {
-    Route::get('/' , function () {
+Route::prefix('admin')->namespace('Admin')->group(function () {
+    
+    $this->get('/' , function () {
         return view('admin.master.index');
     });
+
+    //index page routes
+    $this->resource('slider' , 'SliderController');
+
 
 });

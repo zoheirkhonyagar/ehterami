@@ -2,7 +2,7 @@
     <div class="footer-corporate__main bg-gray-darker">
         <div class="shell shell-fluid shell-condensed">
             <div class="range range-xs-center range_xl-ten range-50 footer-corporate__range">
-                <div class="cell-xs-10 cell-sm-6 cell-md-4 cell-lg-4 cell-xl-2 footer-corporate__column">
+                <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 cell-xl-2 footer-corporate__column">
                     <h4 class="heading-bordered">دفتر مرکزی</h4>
                     <ul class="list-md">
                         <li>
@@ -40,19 +40,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="cell-xs-10 cell-sm-6 cell-md-3 cell-lg-3 cell-xl-2 footer-corporate__column">
-                    <h4 class="heading-bordered">هم اکنون مشترک شوید</h4>
-                    <p>از جدیدترین پیشنهادات و به روز رسانی ها مطلع شوید</p>
-                    <!-- RD Mailform-->
-                    <form class="rd-mailform rd-mailform_sm rd-mailform_centered box-width-2" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="">
-                        <div class="form-wrap">
-                            <input class="form-input" id="subscribe-email" type="email" name="email" data-constraints="@Email @Required" dir="ltr">
-                            <label class="form-label" for="subscribe-email">ایمیل خود را وارد کنید</label>
-                        </div>
-                        <button class="button button-sm button-block button-secondary" type="submit">ارسال</button>
-                    </form>
-                </div>
-                <div class="cell-xs-6 cell-sm-6 cell-md-3 cell-lg-3 footer-corporate__column">
+                <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 footer-corporate__column">
                     <h4 class="heading-bordered">جدیدترین خبر ها</h4>
                     <ul class="post-group post-light-group">
                         <li>
@@ -69,7 +57,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="cell-xs-4 cell-sm-6 cell-md-2 cell-lg-2 cell-xl-1 footer-corporate__column">
+                <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 cell-xl-1 footer-corporate__column">
                     <h4 class="heading-bordered">لینک ها</h4>
                     <ul class="list-xxs list_darker">
                         <li><a href="index.html">خانه</a></li>
@@ -93,8 +81,9 @@
             <div class="range range-20 range_xl-ten footer-corporate__range">
                 <div class="cell-sm-8 cell-xl-6 footer-corporate__aside-column text-sm-left">
                     <!-- Rights-->
-                    <p class="rights">ارائه شده در وب سایت <a href="https://www.rtl-theme.com" target="_blank">راست چین</a>
-                        <br class="veil-xs"><a class="link-underline" href="privacy-policy.html">حریم شخصی</a>
+                    <p class="rights">
+                        پیاده سازی با <i class="fa fa-heart" style="font-style: normal;" aria-hidden="true"></i> توسط :
+                        <a href="https://github.com/zoheirkhonyagar" target="_blank">زهیر خنیاگر</a>
                     </p>
                 </div>
                 <div class="cell-sm-4 cell-xl-4 footer-corporate__aside-column text-sm-right">
@@ -107,6 +96,9 @@
                         </li>
                         <li>
                             <a class="icon icon-xs icon-style-modern fa fa-instagram" href="#"></a>
+                        </li>
+                        <li>
+                            <a class="icon icon-xs icon-style-modern fa fa-telegram" href="#"></a>
                         </li>
                     </ul>
                 </div>
