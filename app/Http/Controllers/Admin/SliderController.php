@@ -82,7 +82,7 @@ class SliderController extends UploadController
      */
     public function edit(Slider $slider)
     {
-        //
+        return view('admin.main-page.sliders.edit',compact('slider'));
     }
 
     /**
@@ -94,7 +94,21 @@ class SliderController extends UploadController
      */
     public function update(Request $request, Slider $slider)
     {
-        //
+        $this->validate($request , [
+            'name' => 'required',
+            'title' => 'nullable',
+            'description' => 'nullable',
+            'priority' => 'nullable|numeric',
+        ]);
+
+        $slider->update([
+            'name' => $request->name,
+            'title' => $request->title,
+            'description' => $request->description,
+            'priority' =>  $request->priority,
+        ]);
+
+        return redirect(route('slider.index'));
     }
 
     /**

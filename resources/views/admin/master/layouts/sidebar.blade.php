@@ -44,24 +44,20 @@
                 </div>
             </li>
             <li class="active">
-                <a href="index.html">
+                <a href="{{ route('admin-index') }}">
                     <i class="fa fa-th-large"></i>
                     <span class="nav-label">داشبورد ها</span>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-bar-chart-o">
-                    </i>
-                    <span class="nav-label">
-                    صفحه اصلی</span>
-                    <span class="fa arrow">
-                    </span>
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">صفحه اصلی</span>
+                    <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level collapse">
                     <li>
-                        <a href="graph_flot.html">
-                        اسلایدر</a>
+                        <a href="{{ route('slider.index') }}">اسلایدر</a>
                     </li>
                     <li>
                         <a href="graph_morris.html">

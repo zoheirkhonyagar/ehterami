@@ -17,7 +17,7 @@ class CreateSlidersTable extends Migration
             $table->increments('id');
             $table->string('name' , 150);
             $table->string('title' , 250)->nullable();
-            $table->string('description' , 500)->nullable();
+            $table->text('description')->nullable();
             $table->text('image');
             $table->integer('priority')->default(1);
             $table->boolean('enable')->default(true);

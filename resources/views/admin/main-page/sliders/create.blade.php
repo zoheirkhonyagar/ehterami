@@ -3,10 +3,10 @@
 
 <div class="row">
     
-    <div class="col-lg-7">
+    <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>فرم ساده <small>فرم ساده ورود</small></h5>
+                <h5>ایجاد اسلایدر</h5>
             </div>
             <div class="ibox-content">
                 <div class="row">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="form-group">
                                 <label>توضیحات اسلایدر</label>
-                                <input type="text" name="descritpion" value="{{ old('descritpion') }}" class="form-control">
+                                <input type="text" name="description" value="{{ old('description') }}" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label>اولویت</label>

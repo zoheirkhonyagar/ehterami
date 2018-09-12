@@ -5,8 +5,8 @@
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
             <div class="ibox-title">
-                <h5>
-                فهرست اسلاید ها</h5>
+                    <h5 style="padding: 12px 0;">فهرست اسلاید ها</h5>
+                    <a class="btn btn-primary btn-xs" style="margin: 0px 20px 0px 0;font-size: 20px;line-height: 34px;" href="{{ route('slider.create') }}">ایجاد اسلایدر</a>
                 <div class="ibox-tools">
                     <a class="collapse-link">
                         <i class="fa fa-chevron-up">

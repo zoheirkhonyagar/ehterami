@@ -6,50 +6,28 @@
         <div class="section-layout-main">
             <div class="swiper-container swiper-slider swiper-slider_style-2" data-autoplay="5000" data-simulate-touch="true" data-slide-effect="fade">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide" data-slide-bg="images/slider-slide-1-1464x660.jpg">
-                        <div class="swiper-slide-caption">
-                            <div class="shell">
-                                <div class="range">
-                                    <div class="cell-sm-11 cell-md-10 cell-lg-9">
-                                        <h1 data-caption-animate="fadeInUpSmall"><span class="custom-line">تبلیغات</span> <span>برای شما</span></h1>
-                                        <div class="object-decorated">
-                                            <h4 data-caption-animate="fadeInRightSmall" data-caption-delay="550">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در</h4>
+                    @foreach($sliders as $slider)
+                        <div class="swiper-slide" data-slide-bg="{{ asset('uploads') . '/' . $slider->image }}">
+                            <div class="swiper-slide-caption">
+                                <div class="shell">
+                                    <div class="range">
+                                        <div class="cell-sm-11 cell-md-10 cell-lg-9">
+                                            @if($slider->title)
+                                                <h1 data-caption-animate="fadeInUpSmall">{{ $slider->title }}</h1>
+                                            @endif
+                                            @if($slider->description)
+                                                <div class="object-decorated">
+                                                    <h4 data-caption-animate="fadeInRightSmall" data-caption-delay="550">{{ $slider->description }}</h4>
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide" data-slide-bg="images/slider-slide-2-1464x660.jpg">
-                        <div class="swiper-slide-caption">
-                            <div class="shell">
-                                <div class="range">
-                                    <div class="cell-sm-11 cell-md-10 cell-lg-9">
-                                        <h1 data-caption-animate="fadeInUpSmall"><span>تبلیغات</span> <span class="custom-line">آنلاین</span></h1>
-                                        <div class="object-decorated">
-                                            <h4 data-caption-animate="fadeInRightSmall" data-caption-delay="550">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" data-slide-bg="images/slider-slide-3-1464x660.jpg">
-                        <div class="swiper-slide-caption">
-                            <div class="shell">
-                                <div class="range">
-                                    <div class="cell-sm-11 cell-md-10 cell-lg-9">
-                                        <h1 data-caption-animate="fadeInUpSmall"><span>ارائه بهترین</span> <span class="custom-line">محصول</span></h1>
-                                        <div class="object-decorated">
-                                            <h4 data-caption-animate="fadeInRightSmall" data-caption-delay="550">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-                <div class="swiper-pagination"></div>
+                {{-- <div class="swiper-pagination"></div> --}}
             </div>
         </div>
         <div class="section-layout-aside">

@@ -17,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 //index routes
 Route::group([''] , function () {
         
-    $this->get('/', function () {
-        return view('main.main-page.index');
-    })->name('main-index');
+    $this->get('/', 'HomeController@index')->name('main-index');
 
     $this->get('/about-us' , function () { return 'about-us'; })->name('about-us-index');
 
@@ -47,7 +45,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     
     $this->get('/' , function () {
         return view('admin.master.index');
-    });
+    })->name('admin-index');
 
     //index page routes
     $this->resource('slider' , 'SliderController');
