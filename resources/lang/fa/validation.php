@@ -136,6 +136,7 @@ return array(
         "size" => "اندازه",
         "body" => "متن",
         "comment" => "کامنت",
-        "images" => 'تصاویر'
+        "images" => 'تصاویر',
+        "image" => 'تصویر'
     ),
 );

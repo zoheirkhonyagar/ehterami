@@ -60,7 +60,7 @@ class UploadController extends Controller
             return response()->json(false);
     }
 
-    protected function getUniqName($file)
+    public function getUniqName($file)
     {
         $originalName = $this->getRegularName($file->getClientOriginalName()); 
         
@@ -69,7 +69,7 @@ class UploadController extends Controller
         return $uniqName;
     }
 
-    protected function getRegularName($name)
+    public function getRegularName($name)
     {
         $characters = ['_',' '];
         

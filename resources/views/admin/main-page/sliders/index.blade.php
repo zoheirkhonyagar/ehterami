@@ -30,9 +30,8 @@
                     <tbody>
                         @foreach($sliders as $slider)
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{ $slider->name }}</td>
+                                <td>{{ $slider->priority }}</td>
                                 <td class="text-navy">
                                     <form action="{{ route('slider.destroy' , [ 'id' => $slider->id ]) }}" method="post">
                                     {{ method_field('delete') }}

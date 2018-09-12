@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Slider;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Modules\UploadController;
 
-class SliderController extends Controller
+class SliderController extends UploadController
 {
     /**
      * Display a listing of the resource.
@@ -37,7 +38,29 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request , [
+            'name' => 'required',
+            'title' => 'nullable',
+            'description' => 'nullable',
+            'priority' => 'nullable|numeric',
+            'image' => 'required|mimes:jpg,jpeg,bmp,png'
+        ]);
+
+        $image = $request->file('image');
+        
+        $filename = $this->getUniqName($request->image);
+
+        $image->move(public_path('uploads/') , $filename);
+
+        Slider::create([
+            'name' => $request->name,
+            'title' => $request->title,
+            'description' => $request->description,
+            'priority' =>  $request->priority,
+            'image' => $filename
+        ]);
+
+        return redirect(route('slider.index'));
     }
 
     /**
@@ -82,6 +105,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        $slider->delete();
+        return redirect(route('slider.index'));
     }
 }
