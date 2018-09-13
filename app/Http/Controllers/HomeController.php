@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Slider;
+use App\Slogan;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
         $sliders = Slider::all();
-        return view('main.main-page.index' , compact('sliders'));
+        $slogans = Slogan::all();
+        return view('main.main-page.index' , compact(['sliders','slogans']));
     }
 }

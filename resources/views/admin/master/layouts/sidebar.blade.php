@@ -60,8 +60,7 @@
                         <a href="{{ route('slider.index') }}">اسلایدر</a>
                     </li>
                     <li>
-                        <a href="graph_morris.html">
-                        آیتم های کلیدی</a>
+                        <a href="{{ route('slogan.index') }}">شعارهای تبلیغاتی</a>
                     </li>
                     <li>
                         <a href="graph_rickshaw.html">

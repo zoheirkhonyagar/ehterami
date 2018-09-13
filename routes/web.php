@@ -50,5 +50,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     //index page routes
     $this->resource('slider' , 'SliderController');
 
+    $this->resource('slogan' , 'SloganController');
+
 
 });

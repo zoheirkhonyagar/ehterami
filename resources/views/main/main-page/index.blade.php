@@ -31,27 +31,15 @@
             </div>
         </div>
         <div class="section-layout-aside">
-            <div class="section-layout-aside__item">
-                <a class="thumb-modern" href="#"><img class="thumb-modern__image" src="images/home-1-538x200.jpg" alt="" width="538" height="200">
-                    <div class="thumb-modern__caption">
-                        <p class="thumb-modern__title">استراتژی</p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-layout-aside__item">
-                <a class="thumb-modern" href="#"><img class="thumb-modern__image" src="images/home-2-498x195.jpg" alt="" width="498" height="195">
-                    <div class="thumb-modern__caption">
-                        <p class="thumb-modern__title">خلاقیت</p>
-                    </div>
-                </a>
-            </div>
-            <div class="section-layout-aside__item">
-                <a class="thumb-modern" href="#"><img class="thumb-modern__image" src="images/home-3-460x195.jpg" alt="" width="460" height="195">
-                    <div class="thumb-modern__caption">
-                        <p class="thumb-modern__title">نوآوری</p>
-                    </div>
-                </a>
-            </div>
+            @foreach($slogans as $slogan)
+                <div class="section-layout-aside__item">
+                    <a class="thumb-modern" href="#"><img class="thumb-modern__image" src="{{ asset('uploads') . '/' . $slogan->image }}" alt="" width="538" height="200">
+                        <div class="thumb-modern__caption">
+                            <p class="thumb-modern__title">{{ $slogan->title }}</p>
+                        </div>
+                    </a>
+                </div>
+            @endforeach
         </div>
     </section>
 
