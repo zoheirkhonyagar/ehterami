@@ -54,5 +54,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
     $this->resource('information' , 'InformationController');
 
+    $this->resource('quote' , 'QuoteController');
+
 
 });
