@@ -45,17 +45,11 @@
                 <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 cell-xl-1 footer-corporate__column">
                     <h4 class="heading-bordered">لینک ها</h4>
                     <ul class="list-xxs list_darker">
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="about-us.html">درباره ما</a>
-                        </li>
-                        <li><a href="services.html">خدمات</a>
-                        </li>
-                        <li><a href="our-works.html">کارهای ما</a>
-                        </li>
-                        <li><a href="news.html">اخبار</a>
-                        </li>
-                        <li><a href="contacts.html">تماس</a>
-                        </li>
+                        <li><a href="{{ route('main-index') }}">خانه</a></li>
+                        <li><a href="{{ route('about-us-index') }}">درباره ما</a></li>
+                        <li><a href="{{ route('portfolio-index') }}">خدمات و نمونه کارها</a></li>
+                        <li><a href="{{ route('news-index') }}">اخبار</a></li>
+                        <li><a href="{{ route('contact-us-index') }}">تماس</a></li>
                     </ul>
                 </div>
             </div>
