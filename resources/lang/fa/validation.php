@@ -137,6 +137,8 @@ return array(
         "body" => "متن",
         "comment" => "کامنت",
         "images" => 'تصاویر',
-        "image" => 'تصویر'
+        "image" => 'تصویر',
+        "phone_number1" => 'شماره تماس 1',
+        "phone_number2" => 'شماره تماس 2',
     ),
 );

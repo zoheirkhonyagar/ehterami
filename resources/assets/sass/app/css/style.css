@@ -5469,6 +5469,7 @@ textarea.form-input {
 
 .quote-light__main {
 	position: relative;
+	margin-top: 100px;
 }
 
 .quote-light__meta {

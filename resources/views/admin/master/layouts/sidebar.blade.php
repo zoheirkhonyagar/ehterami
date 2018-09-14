@@ -63,24 +63,16 @@
                         <a href="{{ route('slogan.index') }}">شعارهای تبلیغاتی</a>
                     </li>
                     <li>
-                        <a href="graph_rickshaw.html">
-                        ویدیو معرفی و تجربه</a>
+                        <a href="#">آیتم های آماردهی</a>
                     </li>
                     <li>
-                        <a href="graph_chartjs.html">
-                        آیتم های آماردهی</a>
+                        <a href="#">از زبان مشتریان</a>
                     </li>
                     <li>
-                        <a href="graph_chartist.html">
-                        از زبان مشتریان</a>
+                        <a href="#">لوگو سازمان ها</a>
                     </li>
                     <li>
-                        <a href="graph_peity.html">
-                        لوگو سازمان ها</a>
-                    </li>
-                    <li>
-                        <a href="graph_sparkline.html">
-                        اطلاعات کلی</a>
+                        <a href="{{ route('information.index') }}">اطلاعات کلی</a>
                     </li>
                 </ul>
             </li>

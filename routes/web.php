@@ -52,5 +52,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
     $this->resource('slogan' , 'SloganController');
 
+    $this->resource('information' , 'InformationController');
+
 
 });

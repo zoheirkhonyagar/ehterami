@@ -209,8 +209,6 @@
                             <div class="item">
                                 <!-- Quote light-->
                                 <article class="quote-light">
-                                    <div class="quote-light__image-wrap"><img class="quote-light__image" src="images/testimonials-1-88x88.jpg" alt="" width="88" height="88">
-                                    </div>
                                     <div class="quote-light__main">
                                         <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای</p>
                                         <ul class="quote-light__meta">
@@ -223,8 +221,6 @@
                             <div class="item">
                                 <!-- Quote light-->
                                 <article class="quote-light">
-                                    <div class="quote-light__image-wrap"><img class="quote-light__image" src="images/testimonials-2-88x88.jpg" alt="" width="88" height="88">
-                                    </div>
                                     <div class="quote-light__main">
                                         <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی</p>
                                         <ul class="quote-light__meta">
@@ -237,8 +233,6 @@
                             <div class="item">
                                 <!-- Quote light-->
                                 <article class="quote-light">
-                                    <div class="quote-light__image-wrap"><img class="quote-light__image" src="images/testimonials-3-88x88.jpg" alt="" width="88" height="88">
-                                    </div>
                                     <div class="quote-light__main">
                                         <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد</p>
                                         <ul class="quote-light__meta">
