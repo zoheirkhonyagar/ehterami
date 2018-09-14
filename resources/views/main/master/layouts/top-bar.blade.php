@@ -18,7 +18,7 @@
                 <li>
                     <div class="unit unit-spacing-xxs unit-horizontal">
                         <div class="unit__left"><span class="text-primary">تلفن:</span></div>
-                        <div class="unit__body"><a href="callto:#" class="ltr_text">+1 (409) 987–5874</a></div>
+                        <div class="unit__body"><a href="#" class="ltr_text">{{$information->phone_number1}}</a></div>
                     </div>
                 </li>
             </ul>

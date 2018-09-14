@@ -6,36 +6,21 @@
                     <h4 class="heading-bordered">دفتر مرکزی</h4>
                     <ul class="list-md">
                         <li>
-                            <p class="address">تبریز، خیابان ولیعصر، جنب بانک ملت، پلاک 896</p>
-                            <ul class="list-inline-0">
-                                <li>
-                                    <dl class="list-terms-inline">
-                                        <dt>روزهای هفته</dt>
-                                        <dd>8:00–20:00</dd>
-                                    </dl>
-                                </li>
-                                <li>
-                                    <dl class="list-terms-inline">
-                                        <dt>آخر هفته</dt>
-                                        <dd>تعطیل</dd>
-                                    </dl>
-                                </li>
-                            </ul>
+                            <dl class="list-terms-inline">
+                                <dt>آدرس</dt>
+                                <dd>{{$information->address}}</dd>
+                            </dl>
                         </li>
                         <li>
                             <dl class="list-terms-inline">
-                                <dt>واحد فروش</dt>
-                                <dd><a href="mailto:#">info@demolink.org</a></dd>
-                            </dl>
-                            <dl class="list-terms-inline">
-                                <dt>پشتیبانی</dt>
-                                <dd><a href="mailto:#">infosupport@demolink.org</a></dd>
+                                <dt>ایمیل</dt>
+                                <dd><a href="mailto:{{$information->email}}">{{$information->email}}</a></dd>
                             </dl>
                         </li>
                         <li>
                             <dl class="list-terms-inline">
                                 <dt>تلفن</dt>
-                                <dd><a href="callto:#" class="ltr_text">+1 (409) 987–5874</a></dd>
+                                <dd><a href="#" class="ltr_text">{{$information->phone_number1}}</a></dd>
                             </dl>
                         </li>
                     </ul>
@@ -89,16 +74,16 @@
                 <div class="cell-sm-4 cell-xl-4 footer-corporate__aside-column text-sm-right">
                     <ul class="list-inline-xxs">
                         <li>
-                            <a class="icon icon-xs icon-style-modern fa fa-twitter" href="#"></a>
+                            <a class="icon icon-xs icon-style-modern fa fa-twitter" href="{{ 'https://twitter.com/' . $information->twitter}}"></a>
                         </li>
                         <li>
-                            <a class="icon icon-xs icon-style-modern fa fa-facebook" href="#"></a>
+                            <a class="icon icon-xs icon-style-modern fa fa-facebook" href="{{ 'https://facebook.com/' . $information->facebook}}"></a>
                         </li>
                         <li>
-                            <a class="icon icon-xs icon-style-modern fa fa-instagram" href="#"></a>
+                            <a class="icon icon-xs icon-style-modern fa fa-instagram" href="{{ 'https://instagram.com/' . $information->instagram}}"></a>
                         </li>
                         <li>
-                            <a class="icon icon-xs icon-style-modern fa fa-telegram" href="#"></a>
+                            <a class="icon icon-xs icon-style-modern fa fa-telegram" href="{{ 'https://telegram.me/' . $information->telegram}}"></a>
                         </li>
                     </ul>
                 </div>
