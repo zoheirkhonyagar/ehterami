@@ -6,6 +6,7 @@ use App\Slider;
 use App\Slogan;
 use Illuminate\Http\Request;
 use App\Information;
+use App\Quote;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,7 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $slogans = Slogan::all();
         $information = Information::find(1);
-        return view('main.main-page.index' , compact(['sliders','slogans','information']));
+        $quotes = Quote::all();
+        return view('main.main-page.index' , compact(['sliders','slogans','information','quotes']));
     }
 }

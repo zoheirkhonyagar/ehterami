@@ -142,7 +142,7 @@
         <div class="shell-fluid">
             <div class="isotope" data-isotope-layout="masonry" data-isotope-group="projects">
                 <div class="row row-no-gutter">
-                    <div class="col-xs-6 col-md-4 isotope-item">
+                    <div class="col-xs-6 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
                         <a class="thumb-zoe" href="#"><img class="thumb-zoe__image" src="images/project-1-639x524.jpg" alt="" width="639" height="524">
                             <div class="thumb-zoe__caption">
@@ -150,7 +150,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-xs-6 col-md-2 isotope-item">
+                    <div class="col-xs-6 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
                         <a class="thumb-zoe" href="#"><img class="thumb-zoe__image" src="images/project-2-320x262.jpg" alt="" width="320" height="262">
                             <div class="thumb-zoe__caption">
@@ -158,15 +158,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-xs-6 col-md-2 isotope-item">
-                        <!-- Thumb Zoe-->
-                        <a class="thumb-zoe" href="#"><img class="thumb-zoe__image" src="images/project-4-320x524.jpg" alt="" width="320" height="524">
-                            <div class="thumb-zoe__caption">
-                                <p class="thumb-zoe__title">لورم ایپسوم</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-6 col-md-4 isotope-item">
+                    <div class="col-xs-6 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
                         <a class="thumb-zoe" href="#"><img class="thumb-zoe__image" src="images/project-3-640x524.jpg" alt="" width="640" height="524">
                             <div class="thumb-zoe__caption">
@@ -174,7 +166,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-xs-6 col-md-2 isotope-item">
+                    <div class="col-xs-6 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
                         <a class="thumb-zoe" href="#"><img class="thumb-zoe__image" src="images/project-5-320x262.jpg" alt="" width="320" height="262">
                             <div class="thumb-zoe__caption">
@@ -206,42 +198,20 @@
                     <div class="section-variant-1">
                         <!-- Owl Carousel-->
                         <div class="owl-carousel owl-carousel_style-3" data-items="1" data-dots="true" data-nav="true" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="false">
+                            @foreach($quotes as $quote)
                             <div class="item">
                                 <!-- Quote light-->
                                 <article class="quote-light">
                                     <div class="quote-light__main">
-                                        <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای</p>
+                                        <p class="q">{{ $quote->quotation }}</p>
                                         <ul class="quote-light__meta">
-                                            <li><span class="cite">استیو جابز</span></li>
-                                            <li><span class="small">مدیرعامل سیب پردازان</span></li>
+                                            <li><span class="cite">{{ $quote->fullname }}</span></li>
+                                            <li><span class="small">{{ $quote->company_name }}</span></li>
                                         </ul>
                                     </div>
                                 </article>
                             </div>
-                            <div class="item">
-                                <!-- Quote light-->
-                                <article class="quote-light">
-                                    <div class="quote-light__main">
-                                        <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی</p>
-                                        <ul class="quote-light__meta">
-                                            <li><span class="cite">بیل گیتس</span></li>
-                                            <li><span class="small">مدیر ارشد مایکروسافت</span></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
-                            <div class="item">
-                                <!-- Quote light-->
-                                <article class="quote-light">
-                                    <div class="quote-light__main">
-                                        <p class="q">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد</p>
-                                        <ul class="quote-light__meta">
-                                            <li><span class="cite">جان اسنو</span></li>
-                                            <li><span class="small">مدیر مسئول دیوار بزرگ</span></li>
-                                        </ul>
-                                    </div>
-                                </article>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

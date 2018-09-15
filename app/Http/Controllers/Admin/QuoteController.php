@@ -15,7 +15,8 @@ class QuoteController extends Controller
      */
     public function index()
     {
-        
+        $quotes = Quote::all();
+        return view('admin.main-page.quotes.index' , compact('quotes'));
     }
 
     /**
@@ -25,7 +26,7 @@ class QuoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.main-page.quotes.create');
     }
 
     /**
@@ -36,7 +37,16 @@ class QuoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request , [
+            'fullname' => 'required',
+            'company_name' => 'nullable',
+            'quotation' => 'required',
+        ]);
+
+        Quote::create($request->all());
+
+        return redirect(route('quote.index'));
     }
 
     /**
@@ -58,7 +68,7 @@ class QuoteController extends Controller
      */
     public function edit(Quote $quote)
     {
-        //
+        return view('admin.main-page.quotes.edit' , compact('quote'));
     }
 
     /**
@@ -70,7 +80,15 @@ class QuoteController extends Controller
      */
     public function update(Request $request, Quote $quote)
     {
-        //
+        $this->validate($request , [
+            'fullname' => 'required',
+            'company_name' => 'nullable',
+            'quotation' => 'required',
+        ]);
+
+        $quote->update($request->all());
+
+        return redirect(route('quote.index'));
     }
 
     /**
@@ -81,6 +99,7 @@ class QuoteController extends Controller
      */
     public function destroy(Quote $quote)
     {
-        //
+        $quote->delete();
+        return redirect(route('quote.index'));
     }
 }
