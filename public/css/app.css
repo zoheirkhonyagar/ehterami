@@ -4373,7 +4373,7 @@ textarea.form-input {
 	bottom: 5px;
 	z-index: 2;
 	padding: 23px 10px;
-	background: rgba(42, 42, 42, 0.72);
+	background:#2b8e89;
 }
 
 .thumb-zoe__title {
@@ -5536,6 +5536,11 @@ html:not(.tablet):not(.mobile) .post-modern__image-wrap:hover:after {
 	flex-grow: 1;
 	padding: 30px 16px 25px 15px;
 	border: 1px solid #e3e3e3;
+}
+
+.post-modern__text{
+	text-align: justify;
+    font-size: 14px;
 }
 
 * + .post-modern__text {

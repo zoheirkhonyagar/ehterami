@@ -1146,7 +1146,7 @@ $document.ready(function () {
 				filterItems = $(isotopeItem).closest('.isotope-wrap').find('[data-isotope-filter]'),
 				iso = new Isotope(isotopeItem, {
 					itemSelector: '.isotope-item',
-					layoutMode: isotopeItem.getAttribute('data-isotope-layout') ? isotopeItem.getAttribute('data-isotope-layout') : 'masonry',
+					layoutMode: 'fitRows',
 					filter: '*',
 					isOriginLeft: false,
 					masonry: {
@@ -1179,7 +1179,7 @@ $document.ready(function () {
 			var iso = $('.isotope[data-isotope-group="' + this.getAttribute("data-isotope-group") + '"]');
 			iso.isotope({
 				itemSelector: '.isotope-item',
-				layoutMode: iso.attr('data-isotope-layout') ? iso.attr('data-isotope-layout') : 'masonry',
+				layoutMode: 'fitRows',
 				filter: this.getAttribute("data-isotope-filter") == '*' ? '*' : '[data-filter*="' + this.getAttribute("data-isotope-filter") + '"]',
 				isOriginLeft: false,
 				masonry: {
