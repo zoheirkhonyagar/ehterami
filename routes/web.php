@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 //index routes
 Route::group([''] , function () {
         
-    $this->get('/', 'HomeController@index')->name('main-index');
+    $this->get('/' , 'HomeController@index')->name('main-index');
 
-    $this->get('/about-us' , function () { return 'about-us'; })->name('about-us-index');
+    $this->get('/about-us' , 'HomeController@aboutUs')->name('about-us-index');
 
     $this->get('/portfolio' , function () { return 'portfolio'; })->name('portfolio-index');
     

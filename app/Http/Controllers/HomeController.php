@@ -18,4 +18,9 @@ class HomeController extends Controller
         $quotes = Quote::all();
         return view('main.main-page.index' , compact(['sliders','slogans','information','quotes']));
     }
+
+    public function aboutUs(){
+        $information = Information::find(1);
+        return view('main.about-us.index', compact(['information']));
+    }
 }
