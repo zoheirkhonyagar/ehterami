@@ -3,11 +3,11 @@
 @section('content')
 
     <!-- Breadcrumbs-->
-    <section class="breadcrumbs-custom bg-image" style="background-image: url(images/bg-image-1.jpg);">
+    <section class="breadcrumbs-custom bg-image">
         <div class="shell">
             <h2 class="breadcrumbs-custom__title">درباره ما</h2>
             <ul class="breadcrumbs-custom__path">
-                <li><a href="index.html">خانه</a></li>
+                <li><a href="{{ route('main-index') }}">خانه</a></li>
                 <li class="active">درباره ما</li>
             </ul>
         </div>
@@ -18,17 +18,15 @@
         <div class="shell">
             <div class="range range-70 range-sm-center range-lg-justify">
                 <div class="cell-sm-10 cell-md-6 cell-lg-5">
-                    <h4>کسب تجربه از سال 2006</h4>
+                    <h4>تاریخچه شرکت</h4>
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای</p>
-                    <h4>ماموریت ما</h4>
                     <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز</p>
                 </div>
                 <div class="cell-sm-10 cell-md-6">
                     <div class="row grid-2">
-                        <div class="col-xs-6"><img src="images/about-1-273x214.jpg" alt="" width="273" height="214"><img src="images/about-2-273x214.jpg" alt="" width="273" height="214">
-                        </div>
-                        <div class="col-xs-6"><img src="images/about-3-273x451.jpg" alt="" width="273" height="451">
+                        <div class="col-xs-12">
+                            <img src="images/about-1-273x214.jpg" alt="" width="273" height="214">
                         </div>
                     </div>
                 </div>
@@ -45,7 +43,6 @@
                     <!-- Section Header-->
                     <div class="section__header">
                         <h4>مدیران ارشد</h4>
-                        <div class="section__header-element"><a class="link link-arrow" href="contacts.html"><span>تماس با ما</span></a></div>
                     </div>
                     <div class="range range-30">
                         <div class="cell-sm-6 cell-md-4">

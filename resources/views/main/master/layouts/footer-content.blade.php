@@ -47,7 +47,7 @@
                     <ul class="list-xxs list_darker">
                         <li><a href="{{ route('main-index') }}">خانه</a></li>
                         <li><a href="{{ route('about-us-index') }}">درباره ما</a></li>
-                        <li><a href="{{ route('portfolio-index') }}">خدمات و نمونه کارها</a></li>
+                        <li><a href="{{ route('portfolio.index') }}">خدمات و نمونه کارها</a></li>
                         <li><a href="{{ route('news-index') }}">اخبار</a></li>
                         <li><a href="{{ route('contact-us-index') }}">تماس</a></li>
                     </ul>

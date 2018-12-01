@@ -21,13 +21,15 @@ Route::group([''] , function () {
 
     $this->get('/about-us' , 'HomeController@aboutUs')->name('about-us-index');
 
-    $this->get('/portfolio' , function () { return 'portfolio'; })->name('portfolio-index');
+    $this->resource('portfolio' , 'PortfolioController');
     
     $this->get('/order' , function () { return 'order'; })->name('order-index');
 
     $this->get('/news' , function () { return 'news'; })->name('news-index');
 
     $this->get('/contact-us' , function () { return 'contact-us'; })->name('contact-us-index');
+
+    $this->get('/comingsoon' , 'HomeController@comingSoon')->name('coming-soon');
 
 });
 

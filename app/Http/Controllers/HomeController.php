@@ -19,8 +19,14 @@ class HomeController extends Controller
         return view('main.main-page.index' , compact(['sliders','slogans','information','quotes']));
     }
 
-    public function aboutUs(){
+    public function aboutUs()
+    {
         $information = Information::find(1);
         return view('main.about-us.index', compact(['information']));
+    }
+
+    public function comingSoon()
+    {
+        return view('coming-soon.index');
     }
 }
