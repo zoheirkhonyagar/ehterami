@@ -33,60 +33,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Top Management-->
-    <section class="section parallax-container bg-gray-dark">
-        <div class="material-parallax"><img src="images/parallax-4.jpg" alt=""></div>
-        <div class="parallax-content">
-            <div class="section-md">
-                <div class="shell">
-                    <!-- Section Header-->
-                    <div class="section__header">
-                        <h4>مدیران ارشد</h4>
-                    </div>
-                    <div class="range range-30">
-                        <div class="cell-sm-6 cell-md-4">
-                            <!-- Card creative-->
-                            <article class="card-creative">
-                                <div class="card-creative__header"><img src="images/team-1-115x119.jpg" alt="" width="115" height="119">
-                                </div>
-                                <div class="card-creative__main" data-fixed-height="">
-                                    <p class="card-creative__title">جان اسنو</p>
-                                    <p class="card-creative__subtitle">بنیان گذار</p>
-                                    <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="cell-sm-6 cell-md-4">
-                            <!-- Card creative-->
-                            <article class="card-creative">
-                                <div class="card-creative__header"><img src="images/team-2-115x119.jpg" alt="" width="115" height="119">
-                                </div>
-                                <div class="card-creative__main" data-fixed-height="">
-                                    <p class="card-creative__title">سامی بیگی</p>
-                                    <p class="card-creative__subtitle">مدیر کسب و کار</p>
-                                    <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="cell-sm-6 cell-md-4">
-                            <!-- Card creative-->
-                            <article class="card-creative">
-                                <div class="card-creative__header"><img src="images/team-3-115x119.jpg" alt="" width="115" height="119">
-                                </div>
-                                <div class="card-creative__main" data-fixed-height="">
-                                    <p class="card-creative__title">پیتر پارکر</p>
-                                    <p class="card-creative__subtitle">مدیر پروژه</p>
-                                    <div class="card-creative__element"><a href="mailto:#">info@demolink.org</a></div>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Social Responsibility & Eco Standards-->
     <section class="section section-sm bg-white">
         <div class="shell">

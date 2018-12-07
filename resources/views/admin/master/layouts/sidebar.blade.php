@@ -78,6 +78,33 @@
             </li>
             <li>
                 <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">درباره ما</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('about-us-history.index') }}">تاریخچه</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('slogan.index') }}">شعارهای تبلیغاتی</a>
+                    </li>
+                    <li>
+                        <a href="#">آیتم های آماردهی</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('quote.index') }}">از زبان مشتریان</a>
+                    </li>
+                    <li>
+                        <a href="#">لوگو سازمان ها</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('information.index') }}">اطلاعات کلی</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
                     <i class="fa fa-bar-chart-o">
                     </i>
                     <span class="nav-label">

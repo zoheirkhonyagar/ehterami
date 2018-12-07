@@ -36860,3 +36860,9 @@ yx-axis
 .mercury-icon-house:before {
 	content: '\e84d';
 }
+
+
+/* custom styles */
+.unit__body {
+	text-align: justify;
+}

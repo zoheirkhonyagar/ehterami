@@ -22,11 +22,23 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $information = Information::find(1);
-        return view('main.about-us.index', compact(['information']));
+        return view('main.about-us.index' , compact(['information']));
     }
 
     public function comingSoon()
     {
         return view('coming-soon.index');
+    }
+
+    public function contactUs()
+    {
+        $information = Information::find(1);
+        return view('main.contact-us.index' , compact(['information']));
+    }
+
+    public function news()
+    {
+        $information = Information::find(1);
+        return view('main.news.index' , compact(['information']));
     }
 }

@@ -36014,3 +36014,8 @@ yx-axis
 }
 
 
+/* custom styles */
+.unit__body {
+	text-align: justify;
+}
+

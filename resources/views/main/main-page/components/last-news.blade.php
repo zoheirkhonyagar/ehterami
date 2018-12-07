@@ -5,7 +5,7 @@
                 <!-- Section Header-->
                 <div class="section__header">
                     <h2>اخبار</h2>
-                    <div class="section__header-element"><a class="link link-arrow" href="news.html"><span>اخبار ما را بخوانید</span></a></div>
+                    <div class="section__header-element"><a class="link link-arrow" href="{{ route('news-index') }}"><span>اخبار ما را بخوانید</span></a></div>
                 </div>
                 <div class="range range-center range-30 range-flex">
                     <div class="cell-xs-12 cell-sm-12 cell-md-6 cell-lg-3">

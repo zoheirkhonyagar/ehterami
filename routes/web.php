@@ -25,9 +25,9 @@ Route::group([''] , function () {
     
     $this->get('/order' , function () { return 'order'; })->name('order-index');
 
-    $this->get('/news' , function () { return 'news'; })->name('news-index');
+    $this->get('/news' , 'HomeController@news')->name('news-index');
 
-    $this->get('/contact-us' , function () { return 'contact-us'; })->name('contact-us-index');
+    $this->get('/contact-us' , 'HomeController@contactUs')->name('contact-us-index');
 
     $this->get('/comingsoon' , 'HomeController@comingSoon')->name('coming-soon');
 
@@ -57,6 +57,8 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     $this->resource('information' , 'InformationController');
 
     $this->resource('quote' , 'QuoteController');
+
+    $this->resource('about-us-history' , 'AboutUsHistoryController');
 
 
 });
