@@ -140,5 +140,6 @@ return array(
         "image" => 'تصویر',
         "phone_number1" => 'شماره تماس 1',
         "phone_number2" => 'شماره تماس 2',
+        "fullname" => 'نام و نام خانوادگی'
     ),
 );

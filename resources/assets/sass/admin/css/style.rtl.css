@@ -7551,3 +7551,9 @@ body.skin-3 {
 .developer-desc{
   margin: 5px 0 0 0;
 }
+
+.box{
+  background: #f3f3f3;
+  padding: 15px 10px;
+  margin: 15px 0;
+}

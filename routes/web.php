@@ -31,6 +31,8 @@ Route::group([''] , function () {
 
     $this->get('/comingsoon' , 'HomeController@comingSoon')->name('coming-soon');
 
+    $this->post('/contact-us' , 'ContactController@store')->name('contact-us-store');
+
 });
 
 //upload routes
@@ -61,5 +63,7 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     $this->resource('about-us-history' , 'AboutUsHistoryController');
 
     $this->resource('medal' , 'MedalController');
+    
+    $this->resource('contact' , 'ContactController');
 
 });

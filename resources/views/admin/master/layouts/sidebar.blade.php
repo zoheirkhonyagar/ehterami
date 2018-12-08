@@ -92,6 +92,12 @@
                 </ul>
             </li>
             <li>
+                <a href="{{ route('contact.index') }}">
+                    <i class="fa fa-th-large"></i>
+                    <span class="nav-label">پیام های دریافتی</span>
+                </a>
+            </li>
+            <li>
                 <a href="#">
                     <i class="fa fa-bar-chart-o">
                     </i>

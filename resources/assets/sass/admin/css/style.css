@@ -7477,3 +7477,11 @@ body.skin-3 {
     display: none;
   }
 }
+
+/* custom styles */
+
+.box{
+  background: #f3f3f3;
+  padding: 15px 10px;
+  margin: 15px 0;
+}
