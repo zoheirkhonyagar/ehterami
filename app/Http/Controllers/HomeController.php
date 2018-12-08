@@ -7,6 +7,8 @@ use App\Slogan;
 use Illuminate\Http\Request;
 use App\Information;
 use App\Quote;
+use App\Medal;
+use App\AboutUsHistory;
 
 class HomeController extends Controller
 {
@@ -22,7 +24,9 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $information = Information::find(1);
-        return view('main.about-us.index' , compact(['information']));
+        $aboutUsHistory = AboutUsHistory::orderBy('id', 'desc')->first(); 
+        $medals = Medal::all();
+        return view('main.about-us.index' , compact(['information','medals','aboutUsHistory']));
     }
 
     public function comingSoon()

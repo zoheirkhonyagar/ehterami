@@ -89,18 +89,6 @@
                     <li>
                         <a href="{{ route('medal.index') }}">مدال ها و افتخارات</a>
                     </li>
-                    <li>
-                        <a href="#">آیتم های آماردهی</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('quote.index') }}">از زبان مشتریان</a>
-                    </li>
-                    <li>
-                        <a href="#">لوگو سازمان ها</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('information.index') }}">اطلاعات کلی</a>
-                    </li>
                 </ul>
             </li>
             <li>
