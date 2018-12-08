@@ -60,5 +60,6 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
 
     $this->resource('about-us-history' , 'AboutUsHistoryController');
 
+    $this->resource('medal' , 'MedalController');
 
 });

@@ -87,7 +87,7 @@
                         <a href="{{ route('about-us-history.index') }}">تاریخچه</a>
                     </li>
                     <li>
-                        <a href="{{ route('slogan.index') }}">شعارهای تبلیغاتی</a>
+                        <a href="{{ route('medal.index') }}">مدال ها و افتخارات</a>
                     </li>
                     <li>
                         <a href="#">آیتم های آماردهی</a>
