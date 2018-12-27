@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 //index routes
 Route::group([''] , function () {
-        
+
     $this->get('/' , 'HomeController@index')->name('main-index');
 
     $this->get('/about-us' , 'HomeController@aboutUs')->name('about-us-index');
 
     $this->resource('portfolio' , 'PortfolioController');
-    
+
     $this->get('/order' , function () { return 'order'; })->name('order-index');
 
     $this->get('/news' , 'HomeController@news')->name('news-index');
@@ -44,12 +44,21 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
     Route::post('request', 'UploadController@multiUpload')->name('multi-upload-image');
 });
 
+
+Route::group([ 'prefix' => 'admin' , 'namespace' => 'Auth' , 'middleware' => 'checkAdmin' ] , function(){
+    $this->get('/' , function(){
+        return "Your Admin";
+    });
+});
+
+
+
 //admin routes
 Route::prefix('admin')->namespace('Admin')->group(function () {
-    
-    $this->get('/' , function () {
-        return view('admin.master.index');
-    })->name('admin-index');
+
+    // $this->get('/' , function () {
+    //     return view('admin.master.index');
+    // })->name('admin-index');
 
     //index page routes
     $this->resource('slider' , 'SliderController');
@@ -63,7 +72,30 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     $this->resource('about-us-history' , 'AboutUsHistoryController');
 
     $this->resource('medal' , 'MedalController');
-    
+
     $this->resource('contact' , 'ContactController');
 
 });
+
+// Auth::routes();
+
+Route::group([''] , function () {
+
+    // Authentication Routes...
+    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+    $this->post('login', 'Auth\LoginController@login');
+    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+    // Registration Routes...
+    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    $this->post('register', 'Auth\RegisterController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+
+});
+
+Route::get('/home', 'HomeController@index')->name('home');

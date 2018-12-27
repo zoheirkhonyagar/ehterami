@@ -12,6 +12,12 @@ use App\AboutUsHistory;
 
 class HomeController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+
     public function index()
     {
         $sliders = Slider::all();
@@ -24,7 +30,7 @@ class HomeController extends Controller
     public function aboutUs()
     {
         $information = Information::find(1);
-        $aboutUsHistory = AboutUsHistory::orderBy('id', 'desc')->first(); 
+        $aboutUsHistory = AboutUsHistory::orderBy('id', 'desc')->first();
         $medals = Medal::all();
         return view('main.about-us.index' , compact(['information','medals','aboutUsHistory']));
     }
@@ -45,4 +51,5 @@ class HomeController extends Controller
         $information = Information::find(1);
         return view('main.news.index' , compact(['information']));
     }
+
 }
