@@ -5,8 +5,8 @@
                 <div class="cell-sm-12 cell-md-6">
                     <div class="section-md shell-fluid-cell">
                         <div class="box-centered box-width-1 box-custom">
-                            <h2><span>تجربه</span><span class="object-decorated object-decorated_inline" style="max-width: 125px;"><span class="heading-5">از سال 2006</span></span></h2>
-                            <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان</p>
+                            <h2><span>تجربه</span><span class="object-decorated object-decorated_inline" style="max-width: 125px;"></span></h2>
+                            <p style="text-align:justify;">{{ $information->experience }}</p>
                             <div class="group-md group-middle button-group">
                                 <a class="button button-primary" href="{{ route('contact-us-index') }}">تماس با ما</a>
                             </div>

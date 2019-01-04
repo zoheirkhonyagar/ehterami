@@ -7,13 +7,21 @@
                     <div class="unit unit-spacing-xxs unit-horizontal">
                         <div class="unit__left"><span class="icon icon-sm icon-primary fl-bigmug-line-two319"></span></div>
                         <div class="unit__body">
-                            <p>به وبسایت ما خوش آمدید</p>
+                        @if (Auth::check())
+                            <form style="padding :0;margin:0;" method="POST" action="{{ route('logout') }}" class="">
+                                @csrf
+                                <button class="button-secondary login-top-bar" >خروج</button>
+                            </form>
+                        @else
+                            <a class="button-primary login-top-bar" href="{{ route('login') }}">ورود / ثبت نام</a>
+                        @endif
+
                         </div>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="rd-navbar-aside__item">
+        {{-- <div class="rd-navbar-aside__item">
             <ul class="rd-navbar-items-list">
                 <li>
                     <div class="unit unit-spacing-xxs unit-horizontal">
@@ -22,6 +30,6 @@
                     </div>
                 </li>
             </ul>
-        </div>
+        </div> --}}
     </div>
 </div>

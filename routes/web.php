@@ -45,22 +45,15 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
 });
 
 
-Route::group([ 'prefix' => 'admin' , 'namespace' => 'Auth' , 'middleware' => 'checkAdmin' ] , function(){
-    $this->get('/' , function(){
-        return "Your Admin";
-    });
-});
-
-
-
 //admin routes
-Route::prefix('admin')->namespace('Admin')->group(function () {
+Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'checkAdmin' ] , function(){
 
-    // $this->get('/' , function () {
-    //     return view('admin.master.index');
-    // })->name('admin-index');
+    $this->get('/' , function () {
 
-    //index page routes
+        return view('admin.master.index');
+
+    })->name('admin-index');
+
     $this->resource('slider' , 'SliderController');
 
     $this->resource('slogan' , 'SloganController');
@@ -74,28 +67,30 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
     $this->resource('medal' , 'MedalController');
 
     $this->resource('contact' , 'ContactController');
-
 });
 
-// Auth::routes();
 
 Route::group([''] , function () {
 
     // Authentication Routes...
     $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
     $this->post('login', 'Auth\LoginController@login');
+
     $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
     // Registration Routes...
     $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
     $this->post('register', 'Auth\RegisterController@register');
 
     // Password Reset Routes...
     $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+
     $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
     $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
     $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 });
-
-Route::get('/home', 'HomeController@index')->name('home');

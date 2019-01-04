@@ -21,7 +21,7 @@
 *     2.7 Thumbnail
 *     2.8 Tooltip
 *     2.9 Snackbars
-*     2.10 Navigation 
+*     2.10 Navigation
 *     2.11 Preloader
 *     2.12 Breadcrumbs
 *     2.13 Panel custom
@@ -50,14 +50,14 @@
 *     5.8 To top
 *     5.9 Tabs
 *     5.10 Photoswipe
-*     5.11 Progress-bars 
+*     5.11 Progress-bars
 *     5.12 Counter
-*     5.13 jquery-circle-progress 
+*     5.13 jquery-circle-progress
 *     5.14 Timecircles
 *     5.15 Swiper
 *
 *   6. Fonts
-*     6.1 FontAwesome 
+*     6.1 FontAwesome
 *     6.2 MDI
 **/
 a:focus,
@@ -11005,7 +11005,7 @@ html.lt-ie-10 .range > .cell-lg-12 {
 
 .unit-spacing-xxs .icon-sm {
 	position: relative;
-	top: 2px;
+	top: 8px;
 }
 
 .unit-spacing-xs.unit > [class*='unit-']:first-child, .unit-spacing-xs.unit-vertical > [class*='unit-']:first-child {
@@ -11827,7 +11827,7 @@ html:not(.lt-ie10) .not-animated {
 }
 
 /**
-* FadeInDown Keyframes Animation 
+* FadeInDown Keyframes Animation
 */
 @-webkit-keyframes fadeInDown {
 	0% {
@@ -12566,7 +12566,7 @@ html:not(.lt-ie10) .not-animated {
 	}
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
@@ -12574,7 +12574,7 @@ html:not(.lt-ie10) .not-animated {
 	transition: height 500ms ease-in-out;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-carousel {
@@ -12661,7 +12661,7 @@ html:not(.lt-ie10) .not-animated {
 	display: block;
 }
 
-/* 
+/*
 * 	Owl Carousel - Lazy Load Plugin
 */
 .owl-carousel .owl-item .owl-lazy {
@@ -12670,7 +12670,7 @@ html:not(.lt-ie10) .not-animated {
 	transition: opacity 400ms ease;
 }
 
-/* 
+/*
 * 	Owl Carousel - Video Plugin
 */
 .owl-carousel .owl-video-wrapper {
@@ -21706,7 +21706,7 @@ yx-axis
 }
 
 /*
-* 
+*
 * Fonts
 * ==================================================
 */
@@ -36022,4 +36022,39 @@ yx-axis
 .text-center{
 	text-align:center;
 }
+
+input.ltr {
+    direction: ltr;
+    text-align: left;
+}
+
+.flex-row{
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:row;
+            flex-direction:row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.form-label-outside {
+    text-align: right;
+    width: 25%;
+    display: inline-block;
+}
+
+.form-button-custom{
+    margin-top: 15px !important;
+}
+
+.error-custom{
+    margin-bottom:20px;
+}
+
+.login-top-bar {
+    color : #fff !important;
+    font-size: 21px;
+}
+
 

@@ -17,7 +17,8 @@
     <section class="section section-md bg-white">
         <div class="shell">
             <div class="range range-70 range-sm-center range-lg-justify">
-                <div class="cell-sm-10 cell-md-6 cell-lg-5">
+                <div class="cell-sm-10 cell-md-6 cell-lg-5" style="line-height: 41px;text-align: justify;">
+                    <h4>درباره ما</h4>
                     {!! $aboutUsHistory->body !!}
                 </div>
                 <div class="cell-sm-10 cell-md-6">
@@ -34,10 +35,10 @@
     <section class="section section-sm bg-white">
         <div class="shell">
             <div class="range range-50 range-sm-center range-md-left range-lg-justify">
-                
+
                 <div class="cell-sm-12 cell-md-12 cell-lg-12">
                     <h4 class="text-center">گواهینامه های ما</h4>
-                    <p class="text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها</p>
+                    <p class="text-center">در این قسمت میتوانید لوح ها و گواهی نامه های مارا مشاهده نمایید</p>
                     <div class="group-3-columns" style="max-width: 430px;" data-lightgallery="group">
                         @foreach($medals as $medal)
                             <div class="column-item">
