@@ -36899,3 +36899,35 @@ input.ltr {
     color : #fff !important;
     font-size: 21px;
 }
+
+.my-title{
+    font-size:18px;
+}
+
+.my-block:hover{
+    background: #168d89;
+    transition: .25s;
+}
+
+.my-block{
+    border: 1px solid;
+    transition: .25s;
+    padding:0;
+}
+
+.category-link{
+    padding: 25px 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.my-block:hover .category-link article h3{
+    color:#fff;
+    transition: .25s;
+}
+
+.my-h2-title a:hover{
+    color:#151515;
+    color:#168d89;
+}

@@ -7,7 +7,7 @@
             <div class="rd-navbar-brand" style="text-align:center;">
                 <a class="brand" href="{{ route('main-index') }}">
                     <div class="brand__name">
-                        <img src="images/logo.png" alt="Ehterami-logo" width="110" height="110" style="width:110px;height:110px;max-height:110px">
+                        <img src="/images/logo.png" alt="Ehterami-logo" width="110" height="110" style="width:110px;height:110px;max-height:110px">
                     </div>
                 </a>
             </div>

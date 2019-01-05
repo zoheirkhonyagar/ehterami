@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Portfolio;
+use App\Information;
+use App\Subcategory;
 use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
@@ -14,7 +17,25 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-        return 'portfolio';
+        $information = Information::find(1);
+        $categories = Category::all();
+        return view('main.portfolio.index' , compact('information','categories'));
+    }
+
+    public function showSubcategories($id)
+    {
+        $information = Information::find(1);
+        $subcategories = Category::find($id)->subcategories()->get();
+        return view('main.portfolio.show-subcategories.index' , compact('information','subcategories'));
+    }
+
+    public function showPortfolios($id)
+    {
+        $information = Information::find(1);
+        $subcategory = Subcategory::find($id);
+        $category = $subcategory->category()->first();
+        $portfolios = $subcategory->portfolios()->get();
+        return view('main.portfolio.show-portfolios.all' , compact('information','portfolios','category','subcategory'));
     }
 
     /**

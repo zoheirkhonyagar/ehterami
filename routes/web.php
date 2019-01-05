@@ -23,6 +23,10 @@ Route::group([''] , function () {
 
     $this->resource('portfolio' , 'PortfolioController');
 
+    $this->get('/portfolio/category/{id}' , 'PortfolioController@showSubcategories')->name('show-sub');
+
+    $this->get('/portfolio/subcategory/{id}' , 'PortfolioController@showPortfolios')->name('show-portfolios');
+
     $this->get('/order' , function () { return 'order'; })->name('order-index');
 
     $this->get('/news' , 'HomeController@news')->name('news-index');
