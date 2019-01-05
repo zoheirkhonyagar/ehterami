@@ -15,8 +15,19 @@ class CreateSubcategoriesTable extends Migration
     {
         Schema::create('subcategories', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
+
+        Schema::create('portfolio_subcategory', function (Blueprint $table) {
+            $table->unsignedInteger('portfolio_id');
+            $table->foreign('portfolio_id')->references('id')->on('portfolios')->onDelete('cascade');
+            $table->unsignedInteger('subcategory_id');
+            $table->foreign('subcategory_id')->references('id')->on('subcategories')->onDelete('cascade');
+        });
+
     }
 
     /**
@@ -27,5 +38,6 @@ class CreateSubcategoriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('subcategories');
+        Schema::dropIfExists('portfolio_subcategory');
     }
 }
