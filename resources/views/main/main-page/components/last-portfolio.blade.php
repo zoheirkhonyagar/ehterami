@@ -15,70 +15,17 @@
     <div class="shell-fluid">
         <div class="isotope" data-isotope-layout="masonry" data-isotope-group="projects">
             <div class="row row-no-gutter">
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-1-639x524.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم متن</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-2-320x262.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم متن</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-3-640x524.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم متن</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-5-320x262.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-2-320x262.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم متن</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-3-640x524.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم متن</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
-                    <!-- Thumb Zoe-->
-                    <a class="thumb-zoe" href="#">
-                        <img class="thumb-zoe__image" src="images/project-5-320x262.jpg" alt="" width="320" height="262">
-                        <div class="thumb-zoe__caption">
-                            <p class="thumb-zoe__title">لورم ایپسوم</p>
-                        </div>
-                    </a>
-                </div>
-                
+                @foreach ($portfolios as $portfolio)
+                    <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
+                        <!-- Thumb Zoe-->
+                        <a class="thumb-zoe" href="{{ route('portfolio.show' , [ 'id' => $portfolio->id]) }}">
+                            <img class="thumb-zoe__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="" width="320" height="262">
+                            <div class="thumb-zoe__caption">
+                                <p class="thumb-zoe__title">{{ $portfolio->title }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -33,7 +33,7 @@
                 @foreach ($portfolios as $portfolio)
                     <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
-                        <a class="thumb-zoe" href="#">
+                        <a class="thumb-zoe" href="{{ route('portfolio.show' , [ 'id' => $portfolio->id]) }}">
                             <img class="thumb-zoe__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="" width="320" height="262">
                             <div class="thumb-zoe__caption">
                                 <p class="thumb-zoe__title">{{ $portfolio->title }}</p>
