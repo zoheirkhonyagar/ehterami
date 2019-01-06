@@ -37,10 +37,10 @@
             </div>
             <div class="cell-md-6">
                 <div class="link-block-group">
-                    <a class="link-block" href="#"><img src="images/brand-1-216x102.png" alt="" width="216" height="102"></a>
-                    <a class="link-block" href="#"><img src="images/brand-2-155x34.png" alt="" width="155" height="34"></a>
-                    <a class="link-block" href="#"><img src="images/brand-3-122x33.png" alt="" width="122" height="33"></a>
-                    <a class="link-block" href="#"><img src="images/brand-4-100x76.png" alt="" width="100" height="76"></a>
+                    <a class="link-block" href="#"><img src="images/oraganize/foolad-d.png" alt="شرکت فولاد هرمزگان"></a>
+                    <a class="link-block" href="#"><img src="/images/oraganize/barq-d.png" alt="شرکت توزیع نیروی برق استان هرمزگان"></a>
+                    <a class="link-block" href="#"><img src="/images/oraganize/amoozesh-d.png" alt="اداره کل آموزش و پرورش استان هرمزگان"></a>
+                    <a class="link-block" href="#"><img src="/images/oraganize/banader.png" alt="اداره کل بنادر و دریانوردی هرمزگان" ></a>
                 </div>
             </div>
         </div>

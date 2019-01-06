@@ -16,10 +16,10 @@
         <div class="isotope" data-isotope-layout="masonry" data-isotope-group="projects">
             <div class="row row-no-gutter">
                 @foreach ($portfolios as $portfolio)
-                    <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
+                    <div style="padding:0 10px;" class="col-xs-6 col-sm-4 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
                         <a class="thumb-zoe" href="{{ route('main-portfolio-show' , [ 'id' => $portfolio->id]) }}">
-                            <img class="thumb-zoe__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="" width="320" height="262">
+                            <img class="thumb-zoe__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="{{ $portfolio->title }}">
                             <div class="thumb-zoe__caption">
                                 <p class="thumb-zoe__title">{{ $portfolio->title }}</p>
                             </div>
