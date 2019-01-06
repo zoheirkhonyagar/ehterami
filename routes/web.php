@@ -23,6 +23,8 @@ Route::group([''] , function () {
 
     $this->resource('portfolio' , 'PortfolioController');
 
+    $this->get('/portfolio/{portfolio}' , 'PortfolioController@show')->name('main-portfolio-show');
+
     $this->get('/portfolio/category/{id}' , 'PortfolioController@showSubcategories')->name('show-sub');
 
     $this->get('/portfolio/subcategory/{id}' , 'PortfolioController@showPortfolios')->name('show-portfolios');
@@ -77,6 +79,8 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
     $this->resource('medal' , 'MedalController');
 
     $this->resource('contact' , 'ContactController');
+
+    $this->post('upload-image' , 'UploadController@uploadImageSubject');
 });
 
 

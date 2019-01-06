@@ -6,8 +6,9 @@ use App\Portfolio;
 use App\Subcategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Modules\UploadController;
 
-class PortfolioController extends Controller
+class PortfolioController extends UploadController
 {
     /**
      * Display a listing of the resource.
@@ -39,7 +40,27 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request , [
+            'title' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,bmp,png',
+            'body' => 'required',
+            'subcategory_id' => 'required|numeric'
+        ]);
+
+        $image = $request->file('image');
+
+        $filename = $this->getUniqName($request->image);
+
+        $image->move(public_path('uploads/') , $filename);
+
+        $portfolio = new Portfolio();
+        $portfolio->title = $request->title;
+        $portfolio->image = $filename;
+        $portfolio->body = $request->body;
+        $portfolio->save();
+        $portfolio->subcategories()->attach($request->subcategory_id);
+
+        return redirect(route('portfolio.index'));
     }
 
     /**
@@ -84,6 +105,7 @@ class PortfolioController extends Controller
      */
     public function destroy(Portfolio $portfolio)
     {
-        //
+        $portfolio->delete();
+        return redirect(route('portfolio.index'));
     }
 }

@@ -19,7 +19,7 @@
                             </div>
                             <div class="form-group">
                                 <label>انتخاب زیردسته</label>
-                                <select class="form-control m-b" name="category_id">
+                                <select class="form-control m-b" name="subcategory_id">
                                     @foreach ($subcategories as $subcategory)
                                         <option value="{{ $subcategory->id }}">{{ $subcategory->title }}</option>
                                     @endforeach

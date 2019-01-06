@@ -230,10 +230,10 @@ p img {
 
 @media (min-width: 768px) {
 	p img {
-		float: right;
-		max-width: 45%;
-		min-width: 200px;
-		margin-left: 20px;
+		/* float: right; */
+		/* max-width: 45%; */
+		/* min-width: 200px; */
+		/* margin-left: 20px; */
 	}
 	p img.img-right {
 		float: left;
