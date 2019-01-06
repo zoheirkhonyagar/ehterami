@@ -6,7 +6,7 @@
                 <div class="section__header">
                     <h2>پروژه های ما</h2>
                     <div class="section__header-element">
-                        <a class="link link-arrow" href="{{route('portfolio.index')}}"><span>مشاهده همه پروژه ها</span></a>
+                        <a class="link link-arrow" href="{{route('main-portfolio-index')}}"><span>مشاهده همه پروژه ها</span></a>
                     </div>
                 </div>
             </div>

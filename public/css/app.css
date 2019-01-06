@@ -36092,4 +36092,30 @@ input.ltr {
     color:#168d89;
 }
 
+.my_blog_main{
+    margin-top:0;
+}
+
+.post-single__main{
+    margin-top:0;
+}
+
+@media (max-width: 767px) {
+    .my_blog_main{
+        margin-top:90px;
+    }
+}
+
+@media (min-width: 768px) {
+    .my_blog_main{
+        margin-top:90px;
+    }
+}
+
+@media (min-width: 992px){
+    .my-bg-white{
+        padding-top:0;
+    }
+}
+
 

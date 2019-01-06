@@ -23,6 +23,8 @@ Route::group([''] , function () {
 
     $this->resource('portfolio' , 'PortfolioController');
 
+    $this->get('/portfolio' , 'PortfolioController@index')->name('main-portfolio-index');
+
     $this->get('/portfolio/{portfolio}' , 'PortfolioController@show')->name('main-portfolio-show');
 
     $this->get('/portfolio/category/{id}' , 'PortfolioController@showSubcategories')->name('show-sub');

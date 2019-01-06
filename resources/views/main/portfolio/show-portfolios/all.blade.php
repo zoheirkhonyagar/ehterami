@@ -21,7 +21,7 @@
                 <div class="section__header">
                     <h2 class="my-h2-title"><a class="link" href="{{ route('show-sub' , [ 'id' => $category->id ]) }}">{{ $category->title }}</a><span style="margin:0 25px;color:#168d89;">></span><a href="{{ route('show-portfolios' , [ 'id' => $subcategory->id ]) }}">{{ $subcategory->title }}</a></h2>
                     <div class="section__header-element">
-                        <a class="link link-arrow" href="{{route('portfolio.index')}}"><span>مشاهده همه پروژه ها</span></a>
+                        <a class="link link-arrow" href="{{route('main-portfolio-index')}}"><span>مشاهده همه پروژه ها</span></a>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 @foreach ($portfolios as $portfolio)
                     <div class="col-xs-6 col-sm-4 col-md-3 isotope-item">
                         <!-- Thumb Zoe-->
-                        <a class="thumb-zoe" href="{{ route('portfolio.show' , [ 'id' => $portfolio->id]) }}">
+                        <a class="thumb-zoe" href="{{ route('main-portfolio-show' , [ 'id' => $portfolio->id]) }}">
                             <img class="thumb-zoe__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="" width="320" height="262">
                             <div class="thumb-zoe__caption">
                                 <p class="thumb-zoe__title">{{ $portfolio->title }}</p>

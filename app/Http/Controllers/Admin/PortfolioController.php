@@ -82,7 +82,8 @@ class PortfolioController extends UploadController
      */
     public function edit(Portfolio $portfolio)
     {
-        //
+        $subcategories = Subcategory::all();
+        return view('admin.portfolio.edit' , compact('subcategories','portfolio'));
     }
 
     /**
@@ -94,7 +95,47 @@ class PortfolioController extends UploadController
      */
     public function update(Request $request, Portfolio $portfolio)
     {
-        //
+        $this->validate($request , [
+
+            'title' => 'required',
+            'image' => 'nullable|mimes:jpg,jpeg,bmp,png',
+            'body' => 'required',
+            'subcategory_id' => 'required|numeric'
+
+        ]);
+
+        $file = $request->file('image');
+
+        $filename = '';
+
+        if ($file) {
+
+            $filename = $this->getUniqName($request->image);
+
+            $file->move(public_path('uploads/') , $filename);
+
+        } else {
+
+            $filename = $portfolio->image;
+
+        }
+
+        $portfolio->update([
+
+            'title' => $request->title,
+            'body' =>  $request->body,
+            'image' => $filename,
+
+        ]);
+
+        $subcategory = $portfolio->subcategories()->first()->id;
+
+        if( $subcategory !== $request->subcategory_id ) {
+            $portfolio->subcategories()->detach($subcategory);
+            $portfolio->subcategories()->attach($request->subcategory_id);
+        }
+
+        return redirect(route('portfolio.index'));
     }
 
     /**

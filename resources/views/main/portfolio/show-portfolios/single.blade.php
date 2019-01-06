@@ -1,11 +1,11 @@
 @extends('main.master.index')
 @section('content')
-    <section class="section section-md bg-white">
-        <div class="shell blog">
+    <section class="section section-md bg-white my-bg-white">
+        <div class="shell blog" style="max-width:1200px;">
             <div class="range range-90">
-                <div class="cell-md-8 cell-lg-9 blog__main">
+                <div class="cell-md-12 cell-lg-12 blog__main my_blog_main">
                     <article class="post-single">
-                        {{-- <img class="post-single__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt="" width="870" height="412"> --}}
+                        {{-- <img class="post-single__image" src="{{ asset('uploads') . '/' . $portfolio->image }}" alt=""> --}}
                         <h4 class="post-single__title">{{ $portfolio->title }}</h4>
                         <ul class="post-single__meta">
                             <li>
@@ -34,7 +34,7 @@
                         </div>
                     </article>
                 </div>
-                <div class="cell-md-4 cell-lg-3 blog__aside">
+                {{-- <div class="cell-md-4 cell-lg-3 blog__aside">
                     <div class="blog-aside__column">
                         <div class="blog__aside-item">
                             <p class="heading-8 blog-title">دسته بندی ها</p>
@@ -68,7 +68,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
