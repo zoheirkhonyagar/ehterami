@@ -34,7 +34,7 @@ class HomeController extends Controller
         $slogans = Slogan::all();
         $information = Information::find(1);
         $quotes = Quote::all();
-        $portfolios = Portfolio::take(6)->latest()->get();
+        $portfolios = Portfolio::take(8)->latest()->get();
         // return $portfolios;
         return view('main.main-page.index' , compact(['sliders','slogans','information','quotes','portfolios']));
     }

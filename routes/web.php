@@ -62,6 +62,12 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
 
     $this->resource('slogan' , 'SloganController');
 
+    $this->resource('portfolio' , 'PortfolioController');
+
+    $this->resource('category' , 'CategoryController');
+
+    $this->resource('subcategory' , 'SubcategoryController');
+
     $this->resource('information' , 'InformationController');
 
     $this->resource('quote' , 'QuoteController');

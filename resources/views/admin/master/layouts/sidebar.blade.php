@@ -92,6 +92,24 @@
                 </ul>
             </li>
             <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">نمونه کارها</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('portfolio.index') }}">لیست نمونه کارها</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category.index') }}">دسته بندی ها</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('subcategory.index') }}">زیردسته ها</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="{{ route('contact.index') }}">
                     <i class="fa fa-th-large"></i>
                     <span class="nav-label">پیام های دریافتی</span>
