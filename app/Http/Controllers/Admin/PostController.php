@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Modules\UploadController;
 
-class PostController extends Controller
+class PostController extends UploadController
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::paginate(10);
+        return view('admin.post.index' , compact('posts'));
     }
 
     /**
@@ -24,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.post.create');
     }
 
     /**
@@ -35,7 +38,25 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request , [
+            'title' => 'required',
+            'image' => 'required|mimes:jpg,jpeg,bmp,png',
+            'body' => 'required',
+        ]);
+
+        $image = $request->file('image');
+
+        $filename = $this->getUniqName($request->image);
+
+        $image->move(public_path('uploads/') , $filename);
+
+        Post::create([
+            'title' => $request->title,
+            'image' => $filename,
+            'body' => $request->body,
+        ]);
+
+        return redirect(route('post.index'));
     }
 
     /**
@@ -44,7 +65,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
         //
     }
@@ -55,9 +76,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+        return view('admin.post.edit' , compact('post'));
     }
 
     /**
@@ -67,9 +88,41 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $this->validate($request , [
+
+            'title' => 'required',
+            'image' => 'nullable|mimes:jpg,jpeg,bmp,png',
+            'body' => 'required',
+
+        ]);
+
+        $file = $request->file('image');
+
+        $filename = '';
+
+        if ($file) {
+
+            $filename = $this->getUniqName($request->image);
+
+            $file->move(public_path('uploads/') , $filename);
+
+        } else {
+
+            $filename = $post->image;
+
+        }
+
+        $post->update([
+
+            'title' => $request->title,
+            'body' =>  $request->body,
+            'image' => $filename,
+
+        ]);
+
+        return redirect(route('post.index'));
     }
 
     /**
@@ -78,8 +131,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Post $post)
     {
-        //
+        $portfolio->delete();
+        return redirect(route('post.index'));
     }
 }

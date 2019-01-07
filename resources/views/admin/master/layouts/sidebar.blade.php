@@ -110,50 +110,22 @@
                 </ul>
             </li>
             <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">اخبار</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('post.index') }}">لیست اخبار</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="{{ route('contact.index') }}">
                     <i class="fa fa-th-large"></i>
                     <span class="nav-label">پیام های دریافتی</span>
                 </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-bar-chart-o">
-                    </i>
-                    <span class="nav-label">
-                    گراف ها</span>
-                    <span class="fa arrow">
-                    </span>
-                </a>
-                <ul class="nav nav-second-level collapse">
-                    <li>
-                        <a href="graph_flot.html">
-                        نمودار های فلوت</a>
-                    </li>
-                    <li>
-                        <a href="graph_morris.html">
-                        نمودار های موریس</a>
-                    </li>
-                    <li>
-                        <a href="graph_rickshaw.html">
-                        نمودار های ریکشا</a>
-                    </li>
-                    <li>
-                        <a href="graph_chartjs.html">
-                        نمودار های جی کوئری چارت</a>
-                    </li>
-                    <li>
-                        <a href="graph_chartist.html">
-                        نمودار های چارتیست</a>
-                    </li>
-                    <li>
-                        <a href="graph_peity.html">
-                        نمودار های پیتی</a>
-                    </li>
-                    <li>
-                        <a href="graph_sparkline.html">
-                        نمودار های اسپارک لاین</a>
-                    </li>
-                </ul>
             </li>
         </ul>
     </div>

@@ -33,7 +33,9 @@ Route::group([''] , function () {
 
     $this->get('/order' , function () { return 'order'; })->name('order-index');
 
-    $this->get('/news' , 'HomeController@news')->name('news-index');
+    $this->get('/posts' , 'HomeController@posts')->name('news-index');
+
+    $this->get('/post/{post}' , 'HomeController@showSinglePost')->name('show-single-post');
 
     $this->get('/contact-us' , 'HomeController@contactUs')->name('contact-us-index');
 
@@ -79,6 +81,8 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
     $this->resource('about-us-history' , 'AboutUsHistoryController');
 
     $this->resource('medal' , 'MedalController');
+
+    $this->resource('post' , 'PostController');
 
     $this->resource('contact' , 'ContactController');
 

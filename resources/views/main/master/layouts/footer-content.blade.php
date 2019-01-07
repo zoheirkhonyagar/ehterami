@@ -28,18 +28,16 @@
                 <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 footer-corporate__column">
                     <h4 class="heading-bordered">جدیدترین خبر ها</h4>
                     <ul class="post-group post-light-group">
-                        <li>
-                            <article class="post-light">
-                                <p class="post-light__title"><a href="single-post.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با</a></p>
-                                <time datetime="2017">13 فروردین 1397</time>
-                            </article>
-                        </li>
-                        <li>
-                            <article class="post-light">
-                                <p class="post-light__title"><a href="single-post.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت</a></p>
-                                <time datetime="2017">25 اردیبهشت 1397</time>
-                            </article>
-                        </li>
+                        @foreach ($posts as $post)
+                            <li>
+                                <article class="post-light">
+                                    <p class="post-light__title">
+                                        <a href="{{ route('show-single-post' , [ 'id' => $post->id ]) }}">{{ $post->title }}</a>
+                                    </p>
+                                    <time datetime="2017">{{ jdate($post->created_at)->format('%d %B %Y') }}</time>
+                                </article>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="cell-xs-12 cell-sm-12 cell-md-4 cell-lg-4 cell-xl-1 footer-corporate__column">
@@ -47,7 +45,7 @@
                     <ul class="list-xxs list_darker">
                         <li><a href="{{ route('main-index') }}">خانه</a></li>
                         <li><a href="{{ route('about-us-index') }}">درباره ما</a></li>
-                        <li><a href="{{ route('portfolio.index') }}">خدمات و نمونه کارها</a></li>
+                        <li><a href="{{ route('main-portfolio-index') }}">خدمات و نمونه کارها</a></li>
                         <li><a href="{{ route('news-index') }}">اخبار</a></li>
                         <li><a href="{{ route('contact-us-index') }}">تماس</a></li>
                     </ul>
