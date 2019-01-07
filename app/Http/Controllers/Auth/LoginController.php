@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-use Illuminate\Http\Request;
+use App\Post;
 use App\Information;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -41,8 +42,8 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         $information = Information::find(1);
-
-        return view('main.auth.login.login' , compact('information'));
+        $posts = Post::take(3)->latest()->get();
+        return view('main.auth.login.login' , compact('information','posts'));
     }
 
     protected function validateLogin(Request $request)

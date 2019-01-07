@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Post;
 use App\User;
 use App\Information;
 use App\Http\Controllers\Controller;
@@ -44,7 +45,8 @@ class RegisterController extends Controller
     public function showRegistrationForm()
     {
         $information = Information::find(1);
-        return view('main.auth.register.register' , compact('information'));
+        $posts = Post::take(3)->latest()->get();
+        return view('main.auth.register.register' , compact('information','posts'));
     }
 
     /**
