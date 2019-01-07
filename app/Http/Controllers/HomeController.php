@@ -30,6 +30,7 @@ class HomeController extends Controller
         $quotes = Quote::all();
         $portfolios = Portfolio::take(8)->latest()->get();
         $posts = Post::take(3)->latest()->get();
+        // return $quotes;
         return view('main.main-page.index' , compact(['sliders','slogans','information','quotes','portfolios','posts']));
     }
 

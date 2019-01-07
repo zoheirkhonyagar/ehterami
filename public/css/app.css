@@ -11005,7 +11005,7 @@ html.lt-ie-10 .range > .cell-lg-12 {
 
 .unit-spacing-xxs .icon-sm {
 	position: relative;
-	top: 8px;
+	top: 0px;
 }
 
 .unit-spacing-xs.unit > [class*='unit-']:first-child, .unit-spacing-xs.unit-vertical > [class*='unit-']:first-child {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
 use App\Category;
 use App\Portfolio;
 use App\Information;
@@ -19,14 +20,16 @@ class PortfolioController extends Controller
     {
         $information = Information::find(1);
         $categories = Category::all();
-        return view('main.portfolio.index' , compact('information','categories'));
+        $posts = Post::take(3)->latest()->get();
+        return view('main.portfolio.index' , compact('information','categories','posts'));
     }
 
     public function showSubcategories($id)
     {
         $information = Information::find(1);
         $subcategories = Category::find($id)->subcategories()->get();
-        return view('main.portfolio.show-subcategories.index' , compact('information','subcategories'));
+        $posts = Post::take(3)->latest()->get();
+        return view('main.portfolio.show-subcategories.index' , compact('information','subcategories','posts'));
     }
 
     public function showPortfolios($id)
@@ -35,7 +38,8 @@ class PortfolioController extends Controller
         $subcategory = Subcategory::find($id);
         $category = $subcategory->category()->first();
         $portfolios = $subcategory->portfolios()->get();
-        return view('main.portfolio.show-portfolios.all' , compact('information','portfolios','category','subcategory'));
+        $posts = Post::take(3)->latest()->get();
+        return view('main.portfolio.show-portfolios.all' , compact('information','portfolios','category','subcategory','posts'));
     }
 
     /**
@@ -68,11 +72,8 @@ class PortfolioController extends Controller
     public function show(Portfolio $portfolio)
     {
         $information = Information::find(1);
-        // $subcategory = Subcategory::find($id);
-        // $category = $subcategory->category()->first();
-        // $portfolios = $subcategory->portfolios()->get();
-        return view('main.portfolio.show-portfolios.single' , compact('information','portfolio'));
-        return $portfolio;
+        $posts = Post::take(3)->latest()->get();
+        return view('main.portfolio.show-portfolios.single' , compact('information','portfolio','posts'));
     }
 
     /**

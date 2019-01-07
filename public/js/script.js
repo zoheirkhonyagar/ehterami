@@ -76,7 +76,7 @@ $document.ready(function () {
 			8: '۸',
 			9: '۹'
 		};
-	
+
 		function traverse(el) {
 			if (el.nodeType == 3) {
 				var list = el.data.match(/[0-9]/g);
@@ -91,7 +91,7 @@ $document.ready(function () {
 		}
 		traverse(document.body);
 	};
-	
+
 	ConvertNumberToPersian();
 	var isNoviBuilder = window.xMode;
 
