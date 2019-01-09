@@ -133,7 +133,7 @@ class PostController extends UploadController
      */
     public function destroy(Post $post)
     {
-        $portfolio->delete();
+        $post->delete();
         return redirect(route('post.index'));
     }
 }
