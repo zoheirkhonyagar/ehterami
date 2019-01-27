@@ -6,6 +6,7 @@ use App\Information;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use SEO;
 
 class LoginController extends Controller
 {
@@ -41,6 +42,9 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
+        SEO::setTitle('ورود به وبسایت');
+        SEO::setCanonical('https://ehterami.co/login');
+
         $information = Information::find(1);
         $posts = Post::take(3)->latest()->get();
         return view('main.auth.login.login' , compact('information','posts'));

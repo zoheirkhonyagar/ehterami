@@ -8,6 +8,7 @@ use App\Portfolio;
 use App\Information;
 use App\Subcategory;
 use Illuminate\Http\Request;
+use SEO;
 
 class PortfolioController extends Controller
 {
@@ -18,6 +19,9 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        SEO::setTitle('نمونه کار ها');
+        SEO::setCanonical('https://ehterami.co/portfolio');
+
         $information = Information::find(1);
         $categories = Category::all();
         $posts = Post::take(3)->latest()->get();
@@ -26,6 +30,11 @@ class PortfolioController extends Controller
 
     public function showSubcategories($id)
     {
+        $category = Category::find($id);
+
+        SEO::setTitle($category->title);
+        SEO::setCanonical('https://ehterami.co/portfolio/category/' . $category->id);
+
         $information = Information::find(1);
         $subcategories = Category::find($id)->subcategories()->get();
         $posts = Post::take(3)->latest()->get();
@@ -36,6 +45,10 @@ class PortfolioController extends Controller
     {
         $information = Information::find(1);
         $subcategory = Subcategory::find($id);
+
+        SEO::setTitle($subcategory->title);
+        SEO::setCanonical('https://ehterami.co/portfolio/subcategory/' . $subcategory->id);
+
         $category = $subcategory->category()->first();
         $portfolios = $subcategory->portfolios()->get();
         $posts = Post::take(3)->latest()->get();
@@ -71,6 +84,9 @@ class PortfolioController extends Controller
      */
     public function show(Portfolio $portfolio)
     {
+        SEO::setTitle($portfolio->title);
+        SEO::setCanonical('https://ehterami.co/portfolio/' . $portfolio->id);
+
         $information = Information::find(1);
         $posts = Post::take(3)->latest()->get();
         return view('main.portfolio.show-portfolios.single' , compact('information','portfolio','posts'));

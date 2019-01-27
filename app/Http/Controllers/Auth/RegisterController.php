@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use SEO;
 
 class RegisterController extends Controller
 {
@@ -44,6 +45,9 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
+        SEO::setTitle('ثبت نام');
+        SEO::setCanonical('https://ehterami.co/register');
+
         $information = Information::find(1);
         $posts = Post::take(3)->latest()->get();
         return view('main.auth.register.register' , compact('information','posts'));
