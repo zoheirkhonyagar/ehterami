@@ -8,10 +8,13 @@
                         <div class="unit__left"><span style="top:8px;" class="icon icon-sm icon-primary fl-bigmug-line-two319"></span></div>
                         <div class="unit__body">
                         @if (Auth::check())
-                            <form style="padding :0;margin:0;" method="POST" action="{{ route('logout') }}" class="">
+                            <form style="padding :0;margin:0;display:inline-block;" method="POST" action="{{ route('logout') }}" class="">
                                 @csrf
                                 <button class="button-secondary login-top-bar" >خروج</button>
                             </form>
+                            @if(Auth::user()->isAdmin())
+                                <a class="button-primary login-top-bar" style="display:inline-block;" href="{{ route('admin-index') }}">پنل مدیریت</a>
+                            @endif
                         @else
                             <a class="button-primary login-top-bar" href="{{ route('login') }}">ورود / ثبت نام</a>
                         @endif

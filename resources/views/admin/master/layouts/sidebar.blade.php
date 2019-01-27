@@ -3,18 +3,13 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element">
-                    <span>
+                    {{-- <span>
                         <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                    </span>
+                    </span> --}}
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">
-                                ایمان عباسی</strong>
-                            </span>
-                            <span class="text-muted text-xs block">
-                                مدیر هنری <b class="caret">
-                                </b>
+                                <strong class="font-bold">{{ Auth::user()->fullname() }}</strong>
                             </span>
                         </span>
                     </a>
