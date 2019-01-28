@@ -118,6 +118,24 @@
             <li>
                 <a href="#">
                     <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">سفارشات</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('payment-successful') }}">سفارشات پرداخت شده</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('payment-unsuccessful') }}">سفارشات پرداخت نشده</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('payment-printed') }}">سفارشات چاپ شده</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
                     <span class="nav-label">اخبار</span>
                     <span class="fa arrow"></span>
                 </a>

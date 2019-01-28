@@ -96,6 +96,14 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
 
     $this->resource('post' , 'PostController');
 
+    $this->resource('payment' , 'PaymentController');
+
+    $this->get('/payments/successful' , 'PaymentController@successful')->name('payment-successful');
+
+    $this->get('/payments/unsuccessful' , 'PaymentController@unsuccessful')->name('payment-unsuccessful');
+
+    $this->get('/payments/printed' , 'PaymentController@printed')->name('payment-printed');
+
     $this->resource('product' , 'ProductController');
 
     $this->resource('contact' , 'ContactController');

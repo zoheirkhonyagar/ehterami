@@ -18,6 +18,24 @@ class PaymentController extends Controller
         //
     }
 
+    public function successful()
+    {
+        $payments = Payment::with(['product','user'])->wherePayment(1)->latest()->paginate(10);
+        return view('admin.orders.successful' , compact('payments'));
+    }
+
+    public function unsuccessful()
+    {
+        $payments = Payment::with(['product','user'])->wherePayment(0)->latest()->paginate(10);
+        return view('admin.orders.unsuccessful' , compact('payments'));
+    }
+
+    public function printed()
+    {
+        $payments = Payment::with(['product','user'])->whereStatus(1)->latest()->paginate(10);
+        return view('admin.orders.printed' , compact('payments'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -58,7 +76,7 @@ class PaymentController extends Controller
      */
     public function edit(Payment $payment)
     {
-        //
+        return view('admin.orders.edit' , compact('payment'));
     }
 
     /**
@@ -70,7 +88,11 @@ class PaymentController extends Controller
      */
     public function update(Request $request, Payment $payment)
     {
-        //
+        $payment->update([
+            'status' => $request->status
+        ]);
+
+        return redirect(route('payment-successful'));
     }
 
     /**
@@ -81,6 +103,7 @@ class PaymentController extends Controller
      */
     public function destroy(Payment $payment)
     {
-        //
+        $payment->delete();
+        return redirect(route('payment-successful'));
     }
 }
