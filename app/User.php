@@ -1,6 +1,7 @@
 <?php
 
 namespace App;
+use App\Payment;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -36,4 +37,8 @@ class User extends Authenticatable
         return $this->first_name . " " . $this->last_name;
     }
 
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

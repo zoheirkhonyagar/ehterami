@@ -12,6 +12,7 @@
                                 @csrf
                                 <button class="button-secondary login-top-bar" >خروج</button>
                             </form>
+                            <a class="button-primary login-top-bar" style="display:inline-block;" href="{{ route('user-orders') }}">سفارشات من</a>
                             @if(Auth::user()->isAdmin())
                                 <a class="button-primary login-top-bar" style="display:inline-block;" href="{{ route('admin-index') }}">پنل مدیریت</a>
                             @endif

@@ -31,7 +31,7 @@ Route::group([''] , function () {
 
     $this->get('/portfolio/subcategory/{id}' , 'PortfolioController@showPortfolios')->name('show-portfolios');
 
-    $this->get('/order' , function () { return 'order'; })->name('order-index');
+    $this->get('/order' , 'HomeController@orderIndex')->name('order-index');
 
     $this->get('/posts' , 'HomeController@posts')->name('news-index');
 
@@ -43,7 +43,19 @@ Route::group([''] , function () {
 
     $this->post('/contact-us' , 'ContactController@store')->name('contact-us-store');
 
+
 });
+
+Route::group([ 'middleware' => 'auth:web' ] , function(){
+
+    $this->post('/payment' , 'HomeController@payment')->name('payment');
+
+    $this->get('/orders' , 'HomeController@userOrders')->name('user-orders');
+
+    $this->get('/payment/checker' , 'HomeController@checker')->name('payment-checker');
+
+});
+
 
 //upload routes
 Route::prefix('upload')->namespace('Modules')->group(function () {

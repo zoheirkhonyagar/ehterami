@@ -36118,4 +36118,19 @@ input.ltr {
     }
 }
 
+.form-select {
+    background: #f5f5f5;
+    padding: 12px 25px;
+    border: none;
+    color: #9b9b9b;
+}
+
+.sweet-alert h2,.sweet-alert p,.sweet-alert button{
+    font-family:IRANSans !important;
+}
+
+.table-custom.table-custom-primary thead th,.table-custom.table-custom-striped tbody td{
+    text-align:center;
+}
+
 

@@ -21,77 +21,65 @@
                 <div class="layout-bordered__main-inner">
                     @if(auth()->user())
                         <h3>سفارشات</h3>
-                        <p>برای ثبت سفارش باید به پنل کاربری وارد شوید</p>
+                        <p>در این قسمت میتوانید نوع سفارش خود را انتخاب و ابعاد چاپی مورد نظر را وارد کنید</p>
+                        <!-- RD Mailform-->
+                        <form class="rd-mailform" data-form-output="form-output-global"  data-form-type="contact" enctype="multipart/form-data" method="post" action="{{ route('payment') }}">
+                            @csrf()
+                            <div class="range range-sm-bottom range-20">
+                                <div class="cell-xs-12">
+                                    <div class="form-wrap">
+                                        <select class="form-select" name="product" id="product-choose">
+                                            @foreach ($products as $product)
+                                                <option data-price="{{ $product->price }}" value="{{ $product->id }}">{{ $product->getPriceWithName() }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    @if ($errors->has('product'))
+                                        <div class="error" style="color:#e74c3c;">{{ $errors->first('product') }}</div>
+                                    @endif
+                                </div>
+                                <div class="cell-xs-12">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="order-width" value="{{ old('width') }}" type="text" name="width" data-constraints="@Required">
+                                        <label class="form-label" for="order-width">طول ( به متر وارد شود )</label>
+                                    </div>
+                                    @if ($errors->has('width'))
+                                        <div class="error" style="color:#e74c3c;">{{ $errors->first('width') }}</div>
+                                    @endif
+                                </div>
+                                <div class="cell-xs-12">
+                                    <div class="form-wrap">
+                                        <input class="form-input" id="order-height" value="{{ old('height') }}" type="text" name="height" data-constraints="@Required">
+                                        <label class="form-label" for="order-height">ارتفاع ( به متر وارد شود )</label>
+                                    </div>
+                                    @if ($errors->has('height'))
+                                        <div class="error" style="color:#e74c3c;">{{ $errors->first('height') }}</div>
+                                    @endif
+                                </div>
+                                <div class="cell-xs-12">
+                                    <div class="form-wrap">
+                                        <input type="file" class="form-input" id="image" name="image" data-constraints="@Required">
+                                    </div>
+                                    @if ($errors->has('image'))
+                                        <div class="error" style="color:#e74c3c;">{{ $errors->first('image') }}</div>
+                                    @endif
+                                </div>
+                                <div class="cell-sm-6">
+                                    <button class="button button-block button-primary" type="submit">ثبت سفارش و پرداخت</button>
+                                </div>
+                            </div>
+                        </form>
                     @else
-
-                    @endif
-                    <h3>سفارشات</h3>
-                    <p>در این قسمت میتوانید نوع سفارش خود را انتخاب و ابعاد چاپی مورد نظر را وارد کنید</p>
-                    <!-- RD Mailform-->
-                    <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contact-us-store') }}">
-                        @csrf()
-                        <div class="range range-sm-bottom range-20">
-                            <div class="cell-xs-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="contact-first-name" value="{{ old('fullname') }}" type="text" name="fullname" data-constraints="@Required">
-                                    <label class="form-label" for="contact-first-name">نام و نام خانوادگی</label>
-                                </div>
-                                @if ($errors->has('fullname'))
-                                    <div class="error" style="color:#e74c3c;">{{ $errors->first('fullname') }}</div>
-                                @endif
-                            </div>
-                            <div class="cell-xs-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="contact-email" value="{{ old('email') }}" type="email" name="email" data-constraints="@Email @Required" dir="ltr">
-                                    <label class="form-label" for="contact-email">ایمیل</label>
-                                </div>
-                                @if ($errors->has('email'))
-                                    <div class="error" style="color:#e74c3c;">{{ $errors->first('email') }}</div>
-                                @endif
-                            </div>
-                            <div class="cell-xs-12">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="contact-phone" value="{{ old('phone') }}" type="text" name="phone" data-constraints="@Numeric @Required">
-                                    <label class="form-label" for="contact-phone">تلفن</label>
-                                </div>
-                                @if ($errors->has('phone'))
-                                    <div class="error" style="color:#e74c3c;">{{ $errors->first('phone') }}</div>
-                                @endif
-                            </div>
-                            <div class="cell-xs-12">
-                                <div class="form-wrap">
-                                    <label class="form-label" for="contact-message">پیام شما</label>
-                                    <textarea class="form-input" id="contact-message" name="body" data-constraints="@Required">{{ old('body') }}</textarea>
-                                </div>
-                                @if ($errors->has('body'))
-                                    <div class="error" style="color:#e74c3c;">{{ $errors->first('body') }}</div>
-                                @endif
-                            </div>
-                            <div class="cell-sm-6">
-                                <button class="button button-block button-primary" type="submit">ارسال پیام</button>
-                            </div>
+                        <h3>سفارشات</h3>
+                        <p>برای ثبت سفارش باید به پنل کاربری وارد شوید</p>
+                        <div>
+                            <a class="button-primary login-top-bar" style="margin:10px 0;display:block;" href="{{route('login')}}">ورود / ثبت نام</a>
                         </div>
-                    </form>
+                    @endif
+
                 </div>
             </div>
             <div class="layout-bordered__aside">
-                <div class="layout-bordered__aside-item">
-                    <p class="heading-8">اجتماعی باشید </p>
-                    <ul class="list-inline-xs">
-                        <li>
-                            <a class="icon icon-sm icon-default fa fa-telegram" href="{{ 'https://telegram.me/' . $information->telegram}}"></a>
-                        </li>
-                        <li>
-                            <a class="icon icon-sm icon-default fa fa-instagram" href="{{ 'https://instagram.com/' . $information->instagram}}"></a>
-                        </li>
-                        <li>
-                            <a class="icon icon-sm icon-default fa fa-facebook" href="{{ 'https://facebook.com/' . $information->facebook}}"></a>
-                        </li>
-                        <li>
-                            <a class="icon icon-sm icon-default fa fa-twitter" href="{{ 'https://twitter.com/' . $information->twitter}}"></a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="layout-bordered__aside-item">
                     <p class="heading-8">تلفن</p>
                     <div class="unit unit-horizontal unit-spacing-xxs">
