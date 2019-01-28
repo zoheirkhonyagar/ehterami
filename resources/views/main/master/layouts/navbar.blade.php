@@ -20,9 +20,9 @@
                 <li class={{ \Request::route()->getName() == 'about-us-index' ? "active" : '' }}><a href="{{ route('about-us-index') }}">درباره ما</a></li>
                 <li class={{ \Request::route()->getName() == 'main-portfolio-index' ? "active" : '' }}><a href="{{ route('main-portfolio-index') }}">خدمات و نمونه کارها</a></li>
                 <li class={{ \Request::route()->getName() == 'news-index' ? "active" : '' }}><a href="{{ route('news-index') }}">اخبار شرکت</a></li>
-                <li class={{ \Request::route()->getName() == 'order-index' ? "active" : '' }}><a href="{{ route('order-index') }}">سفارش</a>
+                <li class={{ \Request::route()->getName() == 'order-index' ? "active" : '' }}><a href="#">سفارش</a>
                     <ul class="rd-navbar-dropdown">
-                        <li><a href="#">سفارش طراحی</a></li>
+                        {{-- <li><a href="#">سفارش طراحی</a></li> --}}
                         <li><a href="#">سفارش بنر و فلکسی</a></li>
                     </ul>
                 </li>

@@ -5,10 +5,10 @@
 <!-- Breadcrumbs-->
 <section class="breadcrumbs-custom bg-image" style="background-image: url(images/bg-image-6.jpg);">
     <div class="shell">
-        <h2 class="breadcrumbs-custom__title">تماس</h2>
+        <h2 class="breadcrumbs-custom__title">سفارش</h2>
         <ul class="breadcrumbs-custom__path">
             <li><a href="{{ route('main-index') }}">خانه</a></li>
-            <li class="active">تماس</li>
+            <li class="active">سفارش</li>
         </ul>
     </div>
 </section>
@@ -19,8 +19,14 @@
         <div class="layout-bordered">
             <div class="layout-bordered__main text-center">
                 <div class="layout-bordered__main-inner">
-                    <h3>در ارتباط باشید</h3>
-                    <p>از طریق فرم زیر میتوانید با ما در ارتباط باشید</p>
+                    @if(auth()->user())
+                        <h3>سفارشات</h3>
+                        <p>برای ثبت سفارش باید به پنل کاربری وارد شوید</p>
+                    @else
+
+                    @endif
+                    <h3>سفارشات</h3>
+                    <p>در این قسمت میتوانید نوع سفارش خود را انتخاب و ابعاد چاپی مورد نظر را وارد کنید</p>
                     <!-- RD Mailform-->
                     <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact" method="post" action="{{ route('contact-us-store') }}">
                         @csrf()

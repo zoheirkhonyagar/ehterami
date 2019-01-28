@@ -2,11 +2,13 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
-                <div class="dropdown profile-element">
-                    {{-- <span>
-                        <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-                    </span> --}}
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                <div class="logo-element">
+                    <span class="block m-t-xs" style="margin-top:0;">
+                        <img src="/images/logo.png" alt="logo" width="100px" height="100px">
+                    </span>
+                </div>
+                <div class="dropdown profile-element my-profile-element">
+                    <a class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
                                 <strong class="font-bold">{{ Auth::user()->fullname() }}</strong>
@@ -33,9 +35,6 @@
                             خروج</a>
                         </li>
                     </ul>
-                </div>
-                <div class="logo-element">
-                    لوگو
                 </div>
             </li>
             <li class="active">
@@ -101,6 +100,18 @@
                     </li>
                     <li>
                         <a href="{{ route('subcategory.index') }}">زیردسته ها</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">محصولات</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('product.index') }}">لیست محصولات</a>
                     </li>
                 </ul>
             </li>

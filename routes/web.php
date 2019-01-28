@@ -84,6 +84,8 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
 
     $this->resource('post' , 'PostController');
 
+    $this->resource('product' , 'ProductController');
+
     $this->resource('contact' , 'ContactController');
 
     $this->post('upload-image' , 'UploadController@uploadImageSubject');
