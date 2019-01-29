@@ -36133,4 +36133,22 @@ input.ltr {
     text-align:center;
 }
 
+@media (min-width: 320px) {
+    .thumb-zoe__caption{
+        padding: 10px 0px !important;
+    }
+    .swiper-slider_style-2 .swiper-slide-caption{
+        padding: 83px 0 90px;
+    }
+}
+
+@media (min-width: 780px) {
+    .thumb-zoe__caption{
+        padding: 10px 0px !important;
+    }
+    .swiper-slider_style-2 .swiper-slide-caption{
+        padding: 83px 0 90px;
+    }
+}
+
 
