@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -114,7 +115,15 @@ class UserController extends Controller
 
     public function changePassword(Request $request)
     {
+        $this->validate($request , [
+            'password' => 'required|string|min:6|confirmed',
+        ]);
 
+        auth()->user()->update([
+            'password' => Hash::make(request('password'))
+        ]);
+
+        return redirect(route('admin-index'));
     }
 
     /**
