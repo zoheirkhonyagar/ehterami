@@ -96,6 +96,16 @@ Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'c
 
     $this->resource('post' , 'PostController');
 
+    $this->resource('user' , 'UserController');
+
+    $this->get('/panel' , 'UserController@profile')->name('profile');
+
+    $this->post('/panel/change' , 'UserController@changeProfile')->name('change-profile');
+
+    $this->get('/panel/changepassview' , 'UserController@changePasswordView')->name('change-profile-password-view');
+
+    $this->post('/panel/changepassword' , 'UserController@changePassword')->name('change-profile-password');
+
     $this->resource('payment' , 'PaymentController');
 
     $this->get('/payments/successful' , 'PaymentController@successful')->name('payment-successful');

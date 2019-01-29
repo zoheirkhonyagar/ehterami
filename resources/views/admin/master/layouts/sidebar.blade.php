@@ -44,6 +44,21 @@
                 </a>
             </li>
             <li>
+                <a href="{{ route('admin-index') }}">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-label">پنل کاربری</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('change-profile-password-view') }}">تغییر رمز عبور</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('profile') }}">تغییر مشخصات</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
                 <a href="#">
                     <i class="fa fa-bar-chart-o"></i>
                     <span class="nav-label">صفحه اصلی</span>
@@ -130,6 +145,18 @@
                     </li>
                     <li>
                         <a href="{{ route('payment-printed') }}">سفارشات چاپ شده</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">مدیریت کاربران</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('user.index') }}">همه کاربران</a>
                     </li>
                 </ul>
             </li>
