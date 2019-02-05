@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Payment;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name','last_name' ,'phone' , 'email', 'password','address','type'
     ];
 
     /**
@@ -26,4 +26,19 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isAdmin()
+    {
+        return $this->type == "admin";
+    }
+
+    public function fullname()
+    {
+        return $this->first_name . " " . $this->last_name;
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

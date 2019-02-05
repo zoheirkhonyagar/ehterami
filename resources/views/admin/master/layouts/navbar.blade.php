@@ -13,10 +13,20 @@
                 <span class="m-r-sm text-muted welcome-message">آی پی شما : <strong class="ip">192.168.0.0</strong></span>
             </li>
             <li>
-                <a href="login.html">
+                <a href="{{route('main-index')}}">
+                    <i class="fa fa-home"></i>
+                    صفحه اصلی
+                </a>
+            </li>
+            <li>
+                <form style="" method="POST" action="{{ route('logout') }}" class="">
+                    @csrf
+                    <button class="btn btn-danger login-top-bar" >خروج</button>
+                </form>
+                {{-- <a href="login.html">
                     <i class="fa fa-sign-out"></i>
                     خروج
-                </a>
+                </a> --}}
             </li>
         </ul>
     </nav>

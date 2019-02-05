@@ -174,8 +174,8 @@ h5 {
   font-size: 12px;
 }
 .nav-header {
-  padding: 33px 25px;
-  background: url("patterns/header-profile.png") no-repeat;
+  /* padding: 33px 25px;
+  background: url("patterns/header-profile.png") no-repeat; */
 }
 .pace-done .nav-header {
   transition: all 0.5s;
@@ -313,8 +313,8 @@ body.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   font-size: 18px;
   font-weight: 600;
   color: white;
-  display: none;
-  padding: 0px 18px;
+  background: #fff;
+  padding: 20px 0;
 }
 .pace-done .navbar-static-side,
 .pace-done .nav-header,
@@ -362,6 +362,11 @@ body.mini-navbar .navbar-default .nav li a span {
 }
 body.canvas-menu .profile-element {
   display: block;
+}
+
+.my-profile-element{
+    text-align: center;
+    padding: 20px 0;
 }
 body:not(.fixed-sidebar):not(.canvas-menu).mini-navbar .nav-second-level {
   display: none;
@@ -7550,4 +7555,10 @@ body.skin-3 {
 
 .developer-desc{
   margin: 5px 0 0 0;
+}
+
+.box{
+  background: #f3f3f3;
+  padding: 15px 10px;
+  margin: 15px 0;
 }

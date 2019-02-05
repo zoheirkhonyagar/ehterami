@@ -16,20 +16,46 @@ use Illuminate\Support\Facades\Route;
 
 //index routes
 Route::group([''] , function () {
-        
-    $this->get('/', 'HomeController@index')->name('main-index');
 
-    $this->get('/about-us' , function () { return 'about-us'; })->name('about-us-index');
+    $this->get('/' , 'HomeController@index')->name('main-index');
 
-    $this->get('/portfolio' , function () { return 'portfolio'; })->name('portfolio-index');
-    
-    $this->get('/order' , function () { return 'order'; })->name('order-index');
+    $this->get('/about-us' , 'HomeController@aboutUs')->name('about-us-index');
 
-    $this->get('/news' , function () { return 'news'; })->name('news-index');
+    $this->resource('portfolio' , 'PortfolioController');
 
-    $this->get('/contact-us' , function () { return 'contact-us'; })->name('contact-us-index');
+    $this->get('/portfolio' , 'PortfolioController@index')->name('main-portfolio-index');
+
+    $this->get('/portfolio/{portfolio}' , 'PortfolioController@show')->name('main-portfolio-show');
+
+    $this->get('/portfolio/category/{id}' , 'PortfolioController@showSubcategories')->name('show-sub');
+
+    $this->get('/portfolio/subcategory/{id}' , 'PortfolioController@showPortfolios')->name('show-portfolios');
+
+    $this->get('/order' , 'HomeController@orderIndex')->name('order-index');
+
+    $this->get('/posts' , 'HomeController@posts')->name('news-index');
+
+    $this->get('/post/{post}' , 'HomeController@showSinglePost')->name('show-single-post');
+
+    $this->get('/contact-us' , 'HomeController@contactUs')->name('contact-us-index');
+
+    $this->get('/comingsoon' , 'HomeController@comingSoon')->name('coming-soon');
+
+    $this->post('/contact-us' , 'ContactController@store')->name('contact-us-store');
+
 
 });
+
+Route::group([ 'middleware' => 'auth:web' ] , function(){
+
+    $this->post('/payment' , 'HomeController@payment')->name('payment');
+
+    $this->get('/orders' , 'HomeController@userOrders')->name('user-orders');
+
+    $this->get('/payment/checker' , 'HomeController@checker')->name('payment-checker');
+
+});
+
 
 //upload routes
 Route::prefix('upload')->namespace('Modules')->group(function () {
@@ -40,19 +66,83 @@ Route::prefix('upload')->namespace('Modules')->group(function () {
     Route::post('request', 'UploadController@multiUpload')->name('multi-upload-image');
 });
 
+
 //admin routes
-Route::prefix('admin')->namespace('Admin')->group(function () {
-    
+Route::group([ 'prefix' => 'admin' , 'namespace' => 'Admin' , 'middleware' => 'checkAdmin' ] , function(){
+
     $this->get('/' , function () {
+
         return view('admin.master.index');
+
     })->name('admin-index');
 
-    //index page routes
     $this->resource('slider' , 'SliderController');
 
     $this->resource('slogan' , 'SloganController');
 
+    $this->resource('portfolio' , 'PortfolioController');
+
+    $this->resource('category' , 'CategoryController');
+
+    $this->resource('subcategory' , 'SubcategoryController');
+
     $this->resource('information' , 'InformationController');
 
+    $this->resource('quote' , 'QuoteController');
+
+    $this->resource('about-us-history' , 'AboutUsHistoryController');
+
+    $this->resource('medal' , 'MedalController');
+
+    $this->resource('post' , 'PostController');
+
+    $this->resource('user' , 'UserController');
+
+    $this->get('/panel' , 'UserController@profile')->name('profile');
+
+    $this->post('/panel/change' , 'UserController@changeProfile')->name('change-profile');
+
+    $this->get('/panel/changepassview' , 'UserController@changePasswordView')->name('change-profile-password-view');
+
+    $this->post('/panel/changepassword' , 'UserController@changePassword')->name('change-profile-password');
+
+    $this->resource('payment' , 'PaymentController');
+
+    $this->get('/payments/successful' , 'PaymentController@successful')->name('payment-successful');
+
+    $this->get('/payments/unsuccessful' , 'PaymentController@unsuccessful')->name('payment-unsuccessful');
+
+    $this->get('/payments/printed' , 'PaymentController@printed')->name('payment-printed');
+
+    $this->resource('product' , 'ProductController');
+
+    $this->resource('contact' , 'ContactController');
+
+    $this->post('upload-image' , 'UploadController@uploadImageSubject');
+});
+
+
+Route::group([''] , function () {
+
+    // Authentication Routes...
+    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+
+    $this->post('login', 'Auth\LoginController@login');
+
+    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+    // Registration Routes...
+    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+
+    $this->post('register', 'Auth\RegisterController@register');
+
+    // Password Reset Routes...
+    $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+
+    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+
+    $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+
+    $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
 });

@@ -2,19 +2,16 @@
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
-                <div class="dropdown profile-element">
-                    <span>
-                        <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                <div class="logo-element">
+                    <span class="block m-t-xs" style="margin-top:0;">
+                        <img src="/images/logo.png" alt="logo" width="100px" height="100px">
                     </span>
-                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                </div>
+                <div class="dropdown profile-element my-profile-element">
+                    <a class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">
-                                ایمان عباسی</strong>
-                            </span>
-                            <span class="text-muted text-xs block">
-                                مدیر هنری <b class="caret">
-                                </b>
+                                <strong class="font-bold">{{ Auth::user()->fullname() }}</strong>
                             </span>
                         </span>
                     </a>
@@ -39,15 +36,27 @@
                         </li>
                     </ul>
                 </div>
-                <div class="logo-element">
-                    لوگو
-                </div>
             </li>
             <li class="active">
                 <a href="{{ route('admin-index') }}">
                     <i class="fa fa-th-large"></i>
                     <span class="nav-label">داشبورد ها</span>
                 </a>
+            </li>
+            <li>
+                <a href="{{ route('admin-index') }}">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-label">پنل کاربری</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('change-profile-password-view') }}">تغییر رمز عبور</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('profile') }}">تغییر مشخصات</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="#">
@@ -66,7 +75,7 @@
                         <a href="#">آیتم های آماردهی</a>
                     </li>
                     <li>
-                        <a href="#">از زبان مشتریان</a>
+                        <a href="{{ route('quote.index') }}">از زبان مشتریان</a>
                     </li>
                     <li>
                         <a href="#">لوگو سازمان ها</a>
@@ -78,43 +87,96 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="fa fa-bar-chart-o">
-                    </i>
-                    <span class="nav-label">
-                    گراف ها</span>
-                    <span class="fa arrow">
-                    </span>
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">درباره ما</span>
+                    <span class="fa arrow"></span>
                 </a>
                 <ul class="nav nav-second-level collapse">
                     <li>
-                        <a href="graph_flot.html">
-                        نمودار های فلوت</a>
+                        <a href="{{ route('about-us-history.index') }}">تاریخچه</a>
                     </li>
                     <li>
-                        <a href="graph_morris.html">
-                        نمودار های موریس</a>
-                    </li>
-                    <li>
-                        <a href="graph_rickshaw.html">
-                        نمودار های ریکشا</a>
-                    </li>
-                    <li>
-                        <a href="graph_chartjs.html">
-                        نمودار های جی کوئری چارت</a>
-                    </li>
-                    <li>
-                        <a href="graph_chartist.html">
-                        نمودار های چارتیست</a>
-                    </li>
-                    <li>
-                        <a href="graph_peity.html">
-                        نمودار های پیتی</a>
-                    </li>
-                    <li>
-                        <a href="graph_sparkline.html">
-                        نمودار های اسپارک لاین</a>
+                        <a href="{{ route('medal.index') }}">مدال ها و افتخارات</a>
                     </li>
                 </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">نمونه کارها</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('portfolio.index') }}">لیست نمونه کارها</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category.index') }}">دسته بندی ها</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('subcategory.index') }}">زیردسته ها</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">محصولات</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('product.index') }}">لیست محصولات</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">سفارشات</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('payment-successful') }}">سفارشات پرداخت شده</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('payment-unsuccessful') }}">سفارشات پرداخت نشده</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('payment-printed') }}">سفارشات چاپ شده</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">مدیریت کاربران</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('user.index') }}">همه کاربران</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span class="nav-label">اخبار</span>
+                    <span class="fa arrow"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="{{ route('post.index') }}">لیست اخبار</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="{{ route('contact.index') }}">
+                    <i class="fa fa-th-large"></i>
+                    <span class="nav-label">پیام های دریافتی</span>
+                </a>
             </li>
         </ul>
     </div>
