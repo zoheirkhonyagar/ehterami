@@ -34,10 +34,11 @@
                                 <td>{{ $slider->priority }}</td>
                                 <td class="text-navy">
                                     <form action="{{ route('slider.destroy' , [ 'id' => $slider->id ]) }}" method="post">
-                                    {{ method_field('delete') }}
-                                    {{ csrf_field() }}
-                                    <a class="btn btn-info btn-xs"  href="{{ route( 'slider.edit' , [ 'id' => $slider->id ] ) }}">ویرایش</a>
-                                    <button type="submit" class="btn btn-danger btn-xs">حذف</button>
+                                        {{ method_field('delete') }}
+                                        {{ csrf_field() }}
+                                        <a class="btn btn-info btn-xs"  href="{{ route( 'slider.edit' , [ 'id' => $slider->id ] ) }}">ویرایش</a>
+                                        <button type="submit" class="btn btn-danger btn-xs">حذف</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
