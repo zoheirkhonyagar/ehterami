@@ -25,7 +25,7 @@
                         </a>
                         <div class="post-modern__main">
                             <p class="post-modern__title"><a href="{{ route('show-single-post' , [ 'id' => $post->id ]) }}">{{ $post->title }}</a></p>
-                            {!! substr($post->body , 0 , 351) . ' ...' !!}
+                            {{ strip_tags(substr($post->body , 0 , 351)) . ' ...' }}
                             <ul class="post-modern__meta">
                                 <li>
                                     <span class="icon icon-primary mdi mdi-clock"></span>
@@ -39,14 +39,7 @@
         </div>
         <!-- Pagination-->
         {{ $posts->links() }}
-        {{-- <ul class="pagination-custom">
-            <li class="pagination-control"><a href="#">قبلی</a></li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li class="active"><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li class="pagination-control"><a href="#">بعدی</a></li>
-        </ul> --}}
+
     </div>
 </section>
 

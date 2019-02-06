@@ -43,7 +43,7 @@
                                         {{-- {{ csrf_field() }} --}}
                                         <a class="btn btn-info btn-xs"  href="{{ route( 'user.edit' , [ 'id' => $user->id ] ) }}">ویرایش</a>
                                         {{-- <button type="submit" class="btn btn-danger btn-xs">حذف</button> --}}
-                                    </form>
+                                    {{-- </form> --}}
                                 </td>
                             </tr>
                         @endforeach

@@ -34,10 +34,11 @@
                                 <td>{{ $slogan->priority }}</td>
                                 <td class="text-navy">
                                     <form action="{{ route('slogan.destroy' , [ 'id' => $slogan->id ]) }}" method="post">
-                                    {{ method_field('delete') }}
-                                    {{ csrf_field() }}
-                                    <a class="btn btn-info btn-xs"  href="{{ route( 'slogan.edit' , [ 'id' => $slogan->id ] ) }}">ویرایش</a>
-                                    <button type="submit" class="btn btn-danger btn-xs">حذف</button>
+                                        {{ method_field('delete') }}
+                                        {{ csrf_field() }}
+                                        <a class="btn btn-info btn-xs"  href="{{ route( 'slogan.edit' , [ 'id' => $slogan->id ] ) }}">ویرایش</a>
+                                        <button type="submit" class="btn btn-danger btn-xs">حذف</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
